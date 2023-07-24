@@ -1,0 +1,312 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="관리하는사람들_프린터기본설정" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1105,4020</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>관리하는사람들_프린터기본설정_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="관리하는사람들_프린터기본설정" sap:VirtualizedContainerService.HintSize="727,3955" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_프린터기본설정1" />
+      <Variable x:TypeArguments="x:String" Name="str_PowerShell" />
+      <Variable x:TypeArguments="x:String" Name="str_프린터기본설정2" />
+      <Variable x:TypeArguments="x:String" Name="str_프린터기본설정3" />
+      <Variable x:TypeArguments="s:String[]" Name="Arr_프린터설정명령어" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="665,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;프린터기본설정 시작&quot;]" />
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="str_프린터기본설정 : &#xA;Power Shell에서 &quot;Microsoft print to PDF&quot; 를 기본프린터로 설정하는 명령어" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="665,282" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_프린터기본설정1]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("프린터설정명령어1").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_프린터기본설정2]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("프린터설정명령어2").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_프린터기본설정3]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("프린터설정명령어3").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[Arr_프린터설정명령어]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[{str_프린터기본설정1,str_프린터기본설정2,str_프린터기본설정3}]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_PowerShell]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">PowerShell</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <Sequence sap2010:Annotation.AnnotationText="PowerShell접속 후 Microsoft print to PDF로 프린터기본설정 " DisplayName="PowerShell 프린터 기본설정_Sequence" sap:VirtualizedContainerService.HintSize="665,3159" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: explorer.exe" sap:VirtualizedContainerService.HintSize="602,3017" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="36176bcc-6a83-40e6-a31d-b2f6c8aa0bc6" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="568,2726" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="실행창 바로 열기" ClickBeforeMode="None" DisplayName="실행 바로가기_Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="506,210" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(lwin)]r[u(lwin)][u(hk)]" Version="V3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NKeyboardShortcuts>
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="실행_Use Application" sap:VirtualizedContainerService.HintSize="506,828" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="f35f130c-2064-4e6c-8992-7b0e04681908" Version="V2">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="450,537" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:SetToClipboard DisplayName="PowerShell가져오기_Set To Clipboard" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[str_PowerShell]" />
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="PowerShell입력_Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,199" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="36176bcc-6a83-40e6-a31d-b2f6c8aa0bc6" Shortcuts="[d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
+                        <uix:NKeyboardShortcuts.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="94, 135, 383, 22" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'powershell'" FullSelectorArgument="&lt;wnd ctrlid='12298' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='12298' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="e0a9937c-023b-4276-8538-83683c8eb7f7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYMAAAAaCAYAAABVejAtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJDSURBVHhe7dnbcYMwEIVh6lJB1EM1asbFKCstQqubsTN5yKD/m/EkxrDS0zkYbwEAsDzKAABAGQAAKAMAgKAMAACUAQDggWXg9y2443W++512xl/MBID/jDIYoAwArIYyGKAMAKyGMhigDACspimDVzicBt/rcGHbNn25Qz6pVZ/H1+7PT0bh6cMu55hT9HpzoJ7nQrlc97R7/Vs+05n5mjwqr/3d/u16/f4pAwBPNyyDGJBtGNpA1SDdJY6z87qSyHUAy3vnXDczn57mNeeX+WdBud0Edl8u/tDr016r/Td7E+/X0xmUAYCVjMvApmwSw9fekdd30snrCC4fT//bcJXjXo5dAXw3T/eh2zjLoDphsgeRyqDZfx3+d+vpDMoAwEqmj4lqJiyboC/6AC//x/PzX2G/OaR5ejffvnQfdlZxPeZpPhgG91frUQYA1vNhGcS76W/KQMM6zYnnnwdjqMZ/r8+i6bxsXAZZnJnC3KzR7b8rg3fr9TMoAwBP91kZVAE6eUSTzjHH43sJYC/BfwW5hLI7vKxhr58/8lHvyyAxa9+Wwe16/QzKAMDTTX9ALuF7HjNprI9o7N11f46G7h72+HtBztFUEPKt4ApmFcO2nheP5fejMpBCseFsyuq+DO7W62dQBgCebvLNIN69aynYRzDW9cz+fI3CMoVuFfyj0lAa0OVVThmVQbt+KZxhcDdlEM3X62cMZwLAg3z4mwEA4MkoAwAAZQAAoAwAAKIpAwDAiigDAABlAACgDAAAIYQfe0Y8Snwzz0kAAAAASUVORK5CYII=" InformativeScreenshot="f595958304849db13caf2d956cbf6011.png" ScopeSelectorArgument="&lt;wnd app='explorer.exe' cls='#32770' title='실행' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                        </uix:NKeyboardShortcuts.Target>
+                      </uix:NKeyboardShortcuts>
+                      <uix:NCheckState sap2010:Annotation.AnnotationText="확인버튼이 있으면 클릭" DisplayName="확인버튼이 있으면_Check App State" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f35f130c-2064-4e6c-8992-7b0e04681908" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,271.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="500" DisplayName="확인버튼 클릭_Click " sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="36176bcc-6a83-40e6-a31d-b2f6c8aa0bc6" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="149, 213, 113, 35" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd title='확인' /&gt;" FuzzySelectorArgument="&lt;wnd title='확인' check:text='unchecked' /&gt;" Guid="7406e532-bc10-492c-9019-811227c37d6a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHUAAAAnCAYAAAAxQgdAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE2SURBVHhe7djBEYMgEIVheqIbmqEVGrAISqEDO9hEncRFITg5qDzf4b+so5dPRDXjOArDiqiAERWwDHUYBtZp2nGHmlJinUVUwIgKGFEBIypgRAWMqIARFTAw1CDOWPFxO4/irREXtvODBSfGeomlYzese9TorRhj6s0YDdQJTZ/jwv44Ue/WD9QZ1ElQs/lG0YhEvaIFLVttGVQN9eCcqGe3AFgf83n0Yr+wNbzaHpwkOHVNop7dcdTPKl5xa9ibOVGvKEdb0iuwhveOe+rd+/OTZoZVNwTffq9sQlQYlVxooLYiaodl+28hol5RaU/dV12pRO2xxuO3hdpZRJ0iao8dQS0/stfKPynu2ENQnxVRASMqYEQFjKiAERUwogJGVMCIClgTlfWZdsxQGUZEBYyocI3yAmYfpoNM1FozAAAAAElFTkSuQmCC" InformativeScreenshot="c7671b32a7fbb054020eac5caabf7c6f.png" ScopeSelectorArgument="&lt;wnd app='explorer.exe' cls='#32770' title='실행' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable CvElementArea="149, 212, 111, 34" CvTextArea="188, 220, 31, 17" CvTextArgument="Sel" CvType="Button" DesignTimeRectangle="149, 213, 113, 35" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'확인'" FullSelectorArgument="&lt;wnd ctrlid='1' title='확인' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='확인' check:text='확인' /&gt;" Guid="6e1844f4-47fb-4872-8ad0-a4b82a7cb3f9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHUAAAAnCAYAAAAxQgdAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE2SURBVHhe7djBEYMgEIVheqIbmqEVGrAISqEDO9hEncRFITg5qDzf4b+so5dPRDXjOArDiqiAERWwDHUYBtZp2nGHmlJinUVUwIgKGFEBIypgRAWMqIARFTAw1CDOWPFxO4/irREXtvODBSfGeomlYzese9TorRhj6s0YDdQJTZ/jwv44Ue/WD9QZ1ElQs/lG0YhEvaIFLVttGVQN9eCcqGe3AFgf83n0Yr+wNbzaHpwkOHVNop7dcdTPKl5xa9ibOVGvKEdb0iuwhveOe+rd+/OTZoZVNwTffq9sQlQYlVxooLYiaodl+28hol5RaU/dV12pRO2xxuO3hdpZRJ0iao8dQS0/stfKPynu2ENQnxVRASMqYEQFjKiAERUwogJGVMCIClgTlfWZdsxQGUZEBYyocI3yAmYfpoNM1FozAAAAAElFTkSuQmCC" InformativeScreenshot="96f32dbf28e43f2d994765ce2b1fc462.png" ScopeSelectorArgument="&lt;wnd app='explorer.exe' cls='#32770' title='실행' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="9, 746, 529, 280" FilePath="C:\Windows\explorer.exe" IconBase64="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" InformativeScreenshot="e868f20b54690e7686ec98568dadef21.png" Selector="&lt;wnd app='explorer.exe' cls='#32770' title='실행' /&gt;" Title="실행" />
+                </uix:NApplicationCard.TargetApp>
+              </uix:NApplicationCard>
+              <uix:NApplicationCard sap2010:Annotation.AnnotationText="PowerShell을 열어 프린터 기본설정 명령어를 입력한다." AttachMode="ByInstance" DisplayName="Use Application: 관리자: Windows PowerShell" sap:VirtualizedContainerService.HintSize="506,1493" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="0d358f8e-9979-45da-94ec-9ad709775c3f" Version="V2">
+                <uix:NApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="PowerShell명령어_실행" sap:VirtualizedContainerService.HintSize="472,1171" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="명령어 입력_For Each" sap:VirtualizedContainerService.HintSize="410,553" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Arr_프린터설정명령어]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:String">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="376,367" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:SetToClipboard DisplayName="프린터기본설정 명령어 가져오기_Set To Clipboard" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[currentItem]" />
+                              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" ScopeIdentifier="0d358f8e-9979-45da-94ec-9ad709775c3f" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
+                      <ui:SetToClipboard DisplayName="PowerShell 종료_Set To Clipboard" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_3" Text="Exit" />
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="410,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Microsoft print to PDF 프린터 기본설정 변경 완료&quot;]" />
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NApplicationCard.Body>
+                <uix:NApplicationCard.TargetApp>
+                  <uix:TargetApp Area="18, 26, 1129, 635" FilePath="Microsoft.WindowsTerminal_8wekyb3d8bbwe!App" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVFhH7ddLTmpBEAbgXhQPEUFUEOWRGEwMw2M0ThiwEyZMNAIDBBEIC4AdkJgob0UEgrKOulR566Q8ORy8wdmlkz9hxFfV1d0EtVmb9fj4qC0CP8nNzc2Pc3V19ZNoWIApZhYzaFlMMNNsClDRaBQwkUiEEg6H9YRCIcrx8bGeo6MjSjAY1HN4eEgJBAJ6/H6/noODA8r+/j5lb29Pj2JY4gxLnGGJMyxxK1jiPp+PQgX8BixxK1jiu7u7oIz46ekpNJtNeH9/pxlJWOJWsMSXwRxl7Bjx+XwOn5+f8Pr6CpeXlyvhVV0zLHGv10uhAuR2v729wcfHB8xmM5hOp9Dv9+Hi4uIbvg4scY/HA0riGOz45eUFJpMJjMdjGkWn04Hz8/NvOMMSZ1jiy2COYljOGTvudrswGo1oR4bDITw9PYGmaWvBEt/Z2aEoCfOcMdhxq9WiczAYDGgUuBPJZFKHJc6wxK1gjNvt/ipAwnLO2PHz8zP0ej3aESwAd2IVLPFlMEcZYTnneDwOjUaD4Ha7TTuCT7IRt4IlLuHt7W2KMoMZL5fLUKvVoF6v004gnkgkTLtmeFXXDGNcLtdXARLGw4V4qVSCarVKReDnXC4HsVjs12COkjDm7OwM7u/voVKpEFwsFiGbzeo4wxJnWOIMS1zCW1tbFMUwBg9XoVCAh4cHKuLu7g5ub28JN4OxQH41+eHCtwOvL15dfE8ymcw3nGGn00mhAuSVSqfTVEQ+n6ffdYkzzF0bYXy08N3gq4u3Bw+whCXucDhASRyDNyKVSsH19TWcnJyYwrzVWCi+mGYwXlu8Ofg9RphxKoBhjPGASZxhxv9lzmaw3W6nUAFWsLHrZbDZnCXOsMRtNhuoBaxJ3AqW+Dow44tof/8dbNZ/u5T6A8jJXVVBUYbIAAAAAElFTkSuQmCC" InformativeScreenshot="95276607aaff3b17a77ce08ebfcb900c.png" Selector="&lt;wnd app='windowsterminal.exe' appid='Microsoft.WindowsTerminal_8wekyb3d8bbwe!App' title='관리자: Windows PowerShell' /&gt;" Title="Windows PowerShell" />
+                </uix:NApplicationCard.TargetApp>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-1920, 0, 3840, 1080" FilePath="C:\Windows\explorer.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARASURBVFhH7ZDdT5tlGMb7J/g3eLI4YjQ6dGiUkAEtHR+Wlo8OpjNGYzQmO1nigQdo1BgTRWP0yMQDE0+MGrONMMBtQCmlLZSWjg0dX66AcxtlMEBo3/fyvl4e8hh8p6OUpAdcyZU0733f1/V76jjQgQpFM9842sTIwWnxKRWzP5KCh/5RmKv3D1LC8wFI7x/k1NcO7MWp7x+GMfsZMP3u3jzzAXDrxzaFpTXxpQO5euY7gZtpBybeyo+n34fC0kq2O5CLf/+hBNnpTyX4zfz519P/BsTkO8jJ198Grr2RdyssLVx7XQaFY4WlhauvoZCssLRw9VUZFI4VlhbGX0EhWWFpYfxlGRSOFZYWrpzC/WzSyZfy6x0dO62wtHDlRRlom0n6JIyxk8iKMwm6FZl4Kzb34K2crUxms4NdO/sVlhaSraBNeqwV2USLwLRgI3YC6yN+rEb9uBdpxkp4y8vhpl15xXKzlbEabcb6sN/KZge72MnubQ6FpYVkiwy4eEIOeOyXEMI0YinUgMWgD7cDPtzq9+JPum+XlhveMmMx2GBlMpsdm6N+q5Pd2xwKSwtjXPDDiMtBrAlr0UYsh3yYDp7Gex1JeL+dzauZOSXZ7GAXO41Es8VAFoWlhbEmmIkmZOON+GtYXjfkxZ2AB2d+SuCZryb3xcxmB7vYyW4ykEVhaSEhw3gDMjEf1iNe3B304OblWuu1duH5MLNv9vtxN+jBetRrdZOBLApLCwkOfbJUj7WwB+mBOixcrLYNzqfneo5bXexktxH3CqDPBjBeD3O0HpkRD1aH6pAO1GD+F7dtaD6d6nZbXexktyEMZFFYWoh7BPAFWaqT5Vo5qhbAKtvQfDrV7bK62MluQxjIorC0MFoHMyavGJbXhKqR7ndjvsdpG0r/drYck+fKMXW+AtMd9uaMO9y1y6BTXU6ri53sNmK1IIvC0sJojQDWyJK8JiR/e79LACsl5LqtZzvL8cfFStzpdWEpUIXlgSqsBN2W+ZvfOOPOjQsVthl0qqvC6mInuw1hIIvC0kKsGubIcWSifE2VHDkFsBwlX0zY+kbnMdy+XCkwLqzJ/kbYjU25pTcibqwNEdolkJWY67p/Tkpm7GInuw1hIIvC0sKIC+awC5mILA9WIt1XjvnuMhz9fNzWqc4yLPYew71ghcA5kY06Ycg9nR12Wt84485813/kXCizutjJbt6TRWFpIVoKM1KKTOh5rAaeQ/rSs5jvLMHT7QlbpzqOWjvc3ZQbI1wKyD1tym9+220Ou7dzFJYWhophhoqRGTiC1d4nke55AgvnH8dTn8RsnTr3mLXDXd4Yg8WA3OcrR2FpIfhomzlQhEzfYaxdOoylrkewcPYQij+O2Hru50NIyw53eWMEigC5R7AIe80xhUVh/b+KPwrBzmr8wLLLoNU4dx35MAA7q/EDyy6DVuMDHehAucnh+Bvf66PP+l4jvQAAAABJRU5ErkJggg==" InformativeScreenshot="ec797d6aebadaf44f87282b4d06490d5.png" Selector="&lt;wnd app='explorer.exe' cls='WorkerW' idx='*' /&gt;" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;프린터기본설정 종료&quot;]" />
+  </Sequence>
+</Activity>

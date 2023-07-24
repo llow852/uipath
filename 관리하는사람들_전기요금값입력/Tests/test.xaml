@@ -1,0 +1,219 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>780,1005.5999999999999</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>test_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.GSuite</x:String>
+      <x:String>UiPath.GSuite.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="545.6,940.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Name="str_관리하는사람들앱시트" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelFile" />
+      <Variable x:TypeArguments="x:String" Default="공용전기료" Name="str_인증번호" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dic_DicCount" />
+      <Variable x:TypeArguments="x:String" Name="str_하이웍스ID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sstr_하이웍스PW" />
+      <Variable x:TypeArguments="x:String" Name="str_testtest" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_사용량사항" />
+      <Variable x:TypeArguments="x:String" Default="2023 년 7 월" Name="str_제목text" />
+      <Variable x:TypeArguments="x:String" Default="2023년 07월 20일" Name="str_납기일" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="공용메일 재접속_Use Browser Chrome" sap:VirtualizedContainerService.HintSize="483.2,828.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="167aad37-8993-438e-800e-c97f9c145d8f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="449.6,612" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_PDF_FileName">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">ㅁㄴㅇㄹ</Literal>
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:SetToClipboard DisplayName="건물 관리코드 가져오기_Set To Clipboard" sap:VirtualizedContainerService.HintSize="387.2,60" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[str_PDF_FileName]" />
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="Single" DisplayName="복사 붙혀넣기_Keyboard Shortcuts " sap:VirtualizedContainerService.HintSize="387.2,199.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="WindowMessages" ScopeIdentifier="167aad37-8993-438e-800e-c97f9c145d8f" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable BrowserURL="https://team-mail.office.hiworks.com/view/22402/2200507/inbox?page=2&amp;sort=-received&amp;keyword=%EC%A0%84%EA%B8%B0%EC%9A%94%EA%B8%88" CvTextArgument="5H38 e¿R." CvType="Text" DesignTimeRectangle="465, 948, 1296, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'TEXTAREA AUTO_FOCUS_OBJ…'" FullSelectorArgument="&lt;webctrl id='AUTO_FOCUS_OBJECT' tag='TEXTAREA' placeholder='댓글*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='AUTO_FOCUS_OBJECT' tag='TEXTAREA' placeholder='댓글*' type='' class='hw-textarea' aaname='' /&gt;" Guid="af9e1c33-8a02-416b-ad1e-1c5ab1300838" ImageBase64="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" InformativeScreenshot="b97cec9a61c952c8338693ce0176d9d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='하이웍스 공용메일' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+            </uix:NKeyboardShortcuts>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="등록버튼 클릭_Click" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="167aad37-8993-438e-800e-c97f9c145d8f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://team-mail.office.hiworks.com/view/22402/2200507/inbox?page=2&amp;sort=-received&amp;keyword=%EC%A0%84%EA%B8%B0%EC%9A%94%EA%B8%88" DesignTimeRectangle="1800, 955, 35, 26" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'등록'" FullSelectorArgument="&lt;webctrl aaname='등록' class='label' parentid='contents' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='등록' class='label' parentid='contents' tag='SPAN' type='' check:innerText='등록' /&gt;" Guid="5801ab5c-afe6-4f5d-a5d7-7ce4a4523505" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAeCAYAAACv1gdQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAErSURBVFhH7ZXNasJAEMd9HR/EZ+kT+ATFiw+QY07ak0+gZ8Fb8SKlGhAq+BEp1VaTrca/UbZ+kInuTqPdwg78DmEy8NudySSXL3VhKlaOi5XjYuW4/EO5xhJzqIXXJuoltal86VoES5SJ+gtyAjUqlzHlfvQ3ckbf3F5uOiNzKvx65uZ9P1kvuY1cRii3FRFajWT9TeUS7DtCi1CcyPloBfIgnEgZ6jP4chnRFtKWF6d7875t1SRdzhnB7Qn4wQZhvCcPEcXPi288v7yj6BB1GULLPc3grYDwK0S9OcGDe8wVKkM8Nj/h7eZzEc9ZmqDGOtJawsXXNSBCuJduxvlAJ77Rt86Aziui/fsyWu6nrQgEv62K6MvtcMeo3uGD4MkZgJXjYuW4GCzXxRbFtG+7NaVisQAAAABJRU5ErkJggg==" InformativeScreenshot="db44610d3b4dd5c66ea72e04d60dfe0c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='하이웍스 공용메일' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvType="Button" DesignTimeRectangle="1774, 947, 87, 43" ElementType="Button" FriendlyName="'등록'" FullSelectorArgument="&lt;webctrl aaname='등록' parentid='contents' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='등록' parentid='contents' tag='BUTTON' type='button' class='hw-button register-button ml-10 primary' check:innerText='등록' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAvCAYAAACMhbZOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAITSURBVHhe7dvNThNRGMZxNy68A1auZc01cC0kxriDnStgwwV0OQvjx6ZXIOuS6gJCCMSgNU00qVpi5KPtjFoe5iFDKc6ZMm1PX4b2Ocl/Qaani98cTjtJz4MwDKFsErZhwjYshf1yq4GF9T08evYBD5++V0NGN/rR8X/bG9jP337B3Mo2Hr/Yx5O1Q8yvf1JDRjf60ZGe/b49bN4JvkDIfqIjPftXeA+bS593xDVRjRY96ZrC5l6jVe03etI1hc3N3TVBjRddhW2UsA0TtmHCNkzYhgnbMGEbVhzszTZOkG/Udh3zk8pHyYtuG502NhzzJ1nBsCOUXdc8t1HvCtsHtlZ2nnxiHx07r911BcPON07qTfd7xAnbsNzbCLqobrrfY1JNHXaqy/8Ye1hXd4zdRLWTLLRRRp4POWF7bjdK9Ecbg763+2w6sO9JxcIufUfwOUKzc44wfu7ojW78d+sPdj7+wnLJMe+eVBzsN8eo/QXCsxDvKj+xFFxfW3zVwGrlFDXu7614n84CH+Lr40w/1Cwf/gOiEMGglVv6jYN4xX89+Oa+nrOZf1wXtmXJNoJONPo2kjNhs+AHXht8QAp7BhK2YcI2TNiGCdswYRsmbMOEbZgTWz+G91/mj+F1zMN/mcc8dIDJb3TMPMDEdDRv/OhGPzpmHs27ineCS597DTd3NVx0o1//ir4qha0ml7DNCnEBBW5PQOL1iK0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="30b9f98192d2d217739eed31efad1125.jpg" Selector="&lt;html app='chrome.exe' url='https://team-mail.office.hiworks.com/view/22402/2200507/inbox?page=2&amp;amp;sort=-received&amp;amp;keyword=%EC%A0%84%EA%B8%B0%EC%9A%94%EA%B8%88' /&gt;" Title="관리하는사람들" Url="https://team-mail.office.hiworks.com/view/22402/2200507/inbox?page=2&amp;sort=-received&amp;keyword=%EC%A0%84%EA%B8%B0%EC%9A%94%EA%B8%88" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

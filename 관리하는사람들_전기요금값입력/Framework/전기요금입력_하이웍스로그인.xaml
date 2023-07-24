@@ -1,0 +1,412 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="전기요금입력_하이웍스로그인" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1199.2,3001.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>전기요금입력_하이웍스로그인_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="전기요금입력_하이웍스로그인" sap:VirtualizedContainerService.HintSize="1209.6,2936.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="is_로그인상태" />
+      <Variable x:TypeArguments="x:String" Name="str_하이웍스URL" />
+      <Variable x:TypeArguments="x:String" Name="str_작업워크플레이스" />
+      <Variable x:TypeArguments="x:String" Name="str_하이웍스CredentialName" />
+      <Variable x:TypeArguments="x:String" Name="str_하이웍스ID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sstr_하이웍스PW" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1147.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;하이웍스 공용메일 접속 시작&quot;]" />
+    <ui:MultipleAssign DisplayName="변수값 초기화_Multiple Assign" sap:VirtualizedContainerService.HintSize="1147.2,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_하이웍스URL]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("하이웍스URL").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_작업워크플레이스]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("작업워크플레이스").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_하이웍스CredentialName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("하이웍스_Credential_AssetName").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="하이웍스 로그인 정보 가져오기&#xA;1. ID : str_하이웍스ID&#xA;2. PW : sstr_하이웍스PW&#xA;3. str_작업워크플레이스 : 관리하는사람들&#xA;" AssetName="하이웍스Login_info" CacheStrategy="None" DisplayName="하이웍스 로그인정보가져오기_Get Credential" FolderPath="관리하는사람들" sap:VirtualizedContainerService.HintSize="1147.2,235.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstr_하이웍스PW]" Username="[str_하이웍스ID]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotCredential>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="str_하이웍스URL : https://office.hiworks.com/stewards.co.kr/&#xA;&#xA;하이웍스 공용메일에 접속한다. &#xA;&#xA;1. 로그인되어 있으면 로그아웃후 재접속한다. " AttachMode="ByInstance" CloseMode="Never" DisplayName="하이웍스 오피스 브라우져 열기_Use Browser Chrome" sap:VirtualizedContainerService.HintSize="1147.2,2030.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="a237e4b3-b25e-4914-95b5-5ab61d4314fa" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="브라우져가 열리면 로그인을 시도한다." DisplayName="브라우져 열기_실행" sap:VirtualizedContainerService.HintSize="1113.6,1721.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:OnUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" ContinueOnError="True" DisplayName="복구 버튼 식별_On Element Appear" sap:VirtualizedContainerService.HintSize="1051.2,446.4" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="False">
+              <ui:OnUiElementAppear.Body>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="복구 버튼 클릭_Click " sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a237e4b3-b25e-4914-95b5-5ab61d4314fa" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="310, 109, 80, 41" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'복구'" FullSelectorArgument="&lt;ctrl name='페이지를 복원하시겠습니까?' role='alert' /&gt;&lt;ctrl name='복구' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='페이지를 복원하시겠습니까?' role='alert' /&gt;&lt;ctrl name='복구' role='push button' automationid='' check:text='복구' /&gt;" Guid="b708196c-6d92-4841-924d-3af3ce5933ba" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAAtCAYAAAAwRkzIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGTSURBVGhD7ZtNSsNgEIY9h17AlTuv4B28hnUn6KYIgngAb9CdC0U3boRuegGp9QBRRNRCIFQZndr3E9NJ8zcxiu8DzyqZUh6+pJvpkhBXGNQZBnVmLujldSIbRw+yunMny52IGmobbaSt0oSgr28i+2dj8wNotgfn42k7EIL2bxNzgC52ZTuSq5uvkxqCbh4/mgM0X20HQtC1vXvzZpqvtgMhqHUjLS5gUCcBgzoJGNRJwKBOAgZ1EjCok4BBnQQtBX2RfiwyGljXPhxMROJEdq1rnVhGs++czUR65mxzgj8YNE8N/k+DLoRBy9jgCT1J5Ikn1IBB6+j4mGrQyq+L6oIfDlrkFzoNQteZbV7wS05oDVt6xNOCdoJOI+RRMBKDFrBMJAYtIIM6y6DOMigFDOokYFAnAYM6CRjUScCgTgIGdRIwqJOAQZ0EISjXGatrrjNy4ba65sKtrjXrerM1QLPVZrpOD0JQpXvKPy2U9fBiPKv3ybegyjCayFbvWda7fKdmqW20kbZKMxeU1INBXRF5B5gGaajKObl0AAAAAElFTkSuQmCC" InformativeScreenshot="7e43c18a205491cccf158a2b2c01a66f.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='페이지를 복원하시겠습니까?' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:OnUiElementAppear.Body>
+              <ui:OnUiElementAppear.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="455677dd-b449-4a1f-8017-55fe5877b234" InformativeScreenshot="f58902f8f6c1ca2241af7dc8ff078d8a" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='페이지를 복원하시겠습니까?' /&gt;&lt;ctrl name='페이지를 복원하시겠습니까?' role='alert' /&gt;&lt;ctrl name='복구' role='push button' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:OnUiElementAppear.Target>
+            </ui:OnUiElementAppear>
+            <uix:NCheckState sap2010:Annotation.AnnotationText="로그인 아이콘이 식별되면 로그아웃 후 재접속 하고 식별되지 않으면 계속 진행한다.&#xA;is_로그인상태" DisplayName="로그인 여부 확인_Check App State" Exists="[is_로그인상태]" sap:VirtualizedContainerService.HintSize="1051.2,1206.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a237e4b3-b25e-4914-95b5-5ab61d4314fa" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="548.8,944" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;로그인 상태 : &quot; + is_로그인상태.ToString +&quot; 이므로 로그아웃 후 재접속합니다.&quot;]" />
+                  <TryCatch sap2010:Annotation.AnnotationText="1. 로그인 상태표시 아이콘을 클릭하여 로그아웃을 시도한다. &#xA;2. kill process로 크롬 프로세스를 종료한다." DisplayName="로그아웃_Try Catch" sap:VirtualizedContainerService.HintSize="486.4,644.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <Sequence DisplayName="로그아웃_Sequence" sap:VirtualizedContainerService.HintSize="449.6,369.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="로그인 이미지 클릭_Click " sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34a2091b-6caa-4c25-a65f-52ebfe224098" InformativeScreenshot="d4e371276117576112e8a5e6a7360b71" Selector="&lt;html app='chrome.exe' title='오피스 홈' /&gt;&lt;webctrl class='photo-36' tag='IMG' parentclass='user-profile-button' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="로그인 이미지 클릭_Click " sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34a2091b-6caa-4c25-a65f-52ebfe224098" InformativeScreenshot="0b36a36bb4f4c1d6dbd21befd62d28c0" Selector="&lt;webctrl aaname=' 로그아웃 ' tag='A' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="크롬 프로세스 종료_Kill Process" sap:VirtualizedContainerService.HintSize="334.4,134.4" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                    <TryCatch.Finally>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;로그아웃 성공&quot;]" />
+                    </TryCatch.Finally>
+                  </TryCatch>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;로그인 상태 : &quot; + is_로그인상태.ToString + &quot; 이므로 계속 진행합니다.&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://team-mail.office.hiworks.com/list/23774/label/all_23774" DesignTimeRectangle="1858, 155, 38, 38" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl class='photo-36' tag='IMG' parentclass='user-profile-button' /&gt;" FuzzySelectorArgument="&lt;webctrl class='photo-36' tag='IMG' parentclass='user-profile-button' type='' aaname='' /&gt;" Guid="cb8d2155-bbed-41fd-a402-a4fc453f44fb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABJSURBVFhH7c4xDQAgEAAx/Kv9gAAw0YXkhu5dZ8/9QVGtqFZUK6oV1YpqRbWiWlGtqFZUK6oV1YpqRbWiWlGtqFZUK6p9Ep37ADixYldSyxuHAAAAAElFTkSuQmCC" InformativeScreenshot="c8584a0e50c2f8e61b8a649b83429c03.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <ui:RetryScope sap2010:Annotation.AnnotationText="다시 시도 횟수 : 3회 &#xA;인터벌 : 5초&#xA;로그인 이후 식별되는 이미지가 없을 경우 재시도 한다." DisplayName="로그인 시도_Retry Scope" sap:VirtualizedContainerService.HintSize="1051.2,128.8" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence sap2010:Annotation.AnnotationText="ID , PW 입력 후 로그인버튼을 누른다음 로그인이 프로필 이미지가 식별되는지 확인한다. " DisplayName="로그인 시도_액션" sap:VirtualizedContainerService.HintSize="449.6,901.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="하이웍스 로그인 ID입력" ClickBeforeTyping="True" DelayBefore="500" DisplayName="ID입력_Type Into " EmptyField="True" sap:VirtualizedContainerService.HintSize="387.2,187.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[str_하이웍스ID]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db3e1d68-3102-412e-a822-532742768ad1" InformativeScreenshot="16719b05a05bd53a00714e65b3bccb5f" Selector="&lt;webctrl id='office_id' tag='INPUT' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:TypeInto>
+                    <ui:TypeSecureText AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="하이웍스 로그인 PW입력" ClickBeforeTyping="True" DisplayName="PW입력_Type Secure Text" EmptyField="True" sap:VirtualizedContainerService.HintSize="387.2,138.4" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[sstr_하이웍스PW]" SimulateType="True">
+                      <ui:TypeSecureText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="708961ac-cc20-4d79-83b9-c84e4aea1e09" InformativeScreenshot="dbd1931d31af5c08a460e6cb4d6ab3dd" Selector="&lt;webctrl id='office_passwd' tag='INPUT' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeSecureText.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:TypeSecureText>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="로그인 버튼 클릭_Click" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a237e4b3-b25e-4914-95b5-5ab61d4314fa" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://office.hiworks.com/stewards.co.kr/" CvElementArea="704, 767, 529, 93" CvTextArea="935, 801, 67, 23" CvTextArgument="2i0l" CvType="Button" DesignTimeRectangle="707, 770, 525, 88" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'로그인'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='int_jogin' aaname='로그인' check:text='로그인' /&gt;" Guid="0a3bf853-0022-4e6c-a082-ed81504af5b2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhEAAABcCAYAAADQx+eJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPgSURBVHhe7dy/blN3HMbhXlBvpysLUy+kLFxA1KlIDB1Q1i5FrYQ60K1dOhSoQIoQSiIECcofpemvNvZrmXBQ8jVx8O/o+UjP4nNsZ0nOq+jYXzVJkqQVMiIkSdJKGRGSJGmlFiPiye5pu3V/p3195ykAwEemO2G6F9JiRBgQAMBlpnshLUbE0IkAABclIwIAKElGBABQkowIAKAkGREAQEkyIgCAkmREAAAlyYgAAEqSEQEAlCQjAgAoSUYEAFCSjAgAoCQZEQBASTIiAICSZEQAACXJiAAASpIRAQCUJCMCAChJRgQAUJKMCACgJBkRAEBJMiIAgJJkRAAAJcmIAABKkhEBAJQkIwIAKElGBABQkowIAKAkGREAQEkyIgCAkmREAAAlyYgANsh+e3w8+YN0fNTuDh4HNkEyIoD12XrV7j09bXvTYZDOztvey8P23Q8D5xsR0IVkREAPHh61g/nvaqkrXIy39+fnljpt2wOv9YEHb9pfy+PhYmf/tke/vLjwPCMCepCMCOhBdyNiMgaOZmeeHBy37V9ftm/eP/6i3f7pdft593x28GzyOj9eeJ4RARsvGREwSm/bs+kv9houxrPRccmI+P1kelJrrw/bt0PHJ2Pi7vPZkNj7+9XS40YE9CAZETBKX3ZEzAbCf+2P34aPv7c1/xn33y49bkRAD5IRAaP0ZUfE7Jzz9vjh8PGZocFgREAPkhEBPVjjPRFV/hMBJCMCetDZiHBPBIxbMiKgB/MRcfB8f/j4DbrSiLiz2x69m5532aczTtq9reXnGRHQg2REQA82bUScHrfvB459wPdEwGglIwJ6sDEjoniR942VMErJiIAerHpPxKRnfw683srWfZE3IqAHyYiAHmzaiHjzrt0ePP65jAjoQTIioGtDH5Ncp+r7VUeBEQE9SEYEdO2GR8TWYduZvN3V780wImCMkhEBXbvhEZEbPP/ZGz7+EaMAxigZEbCpPuM+iMGWLuSz73q4vj5934URAWOUjAjYVEYEsKGSEQGs0XxErND1fqoEuE7JiADWyIiAMUpGBABQkowIAKAkGREAQEkyIgCAkmREAAAlyYgAAEqSEQEAlCQjAgAoSUYEAFCSjAgAoCQZEQBASTIiAICSZEQAACXJiAAASpIRAQCUJCMCAChJRgQAUJKMCACgJBkRAEBJMiIAgJJkRAAAJcmIAABKkhEBAJQkIwIAKElGBABQkowIAKAkGREAQEkyIgCAkmREAAAlyYgAAEqSEQEAlKTFiLh1f2fwRACAmO6FtBgRT3ZPDQkA4JOmO2G6F9JiREiSJFUyIiRJ0gq19j9dIvRWN1lJTAAAAABJRU5ErkJggg==" InformativeScreenshot="0a7d13a0431ae431c9681c1a411e2704.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='하이웍스 오피스' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;ID : &quot; + str_하이웍스ID.ToString + &quot;  PW : 입력완료&quot;]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists Exists="{x:Null}" sap2010:Annotation.AnnotationText="로그인 이후 식별되는 이미지를 찾는다." DisplayName="로그인 표시 확인_Element Exists " sap:VirtualizedContainerService.HintSize="333.6,138.4" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9def65a7-6995-42ff-9bb1-94109fd8b7db" InformativeScreenshot="d4e371276117576112e8a5e6a7360b71" Selector="&lt;webctrl class='photo-36' tag='IMG' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="952a7cdbca6239e8d5b0d59c2242d12a.jpg" Selector="&lt;html app='chrome.exe' title='하이웍스 오피스' /&gt;" Title="하이웍스 오피스" Url="[str_하이웍스URL]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1147.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;하이웍스 공용메일 접속 종료&quot;]" />
+  </Sequence>
+</Activity>
