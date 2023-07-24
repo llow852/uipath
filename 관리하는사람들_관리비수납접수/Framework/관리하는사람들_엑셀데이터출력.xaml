@@ -1,0 +1,504 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="관리하는사람들_엑셀데이터출력" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_str_처리일자" Type="InArgument(x:String)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="out_int_MaxNumber" Type="OutArgument(x:Int64)" />
+    <x:Property Name="out_str_모계좌" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1077,4652</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>관리하는사람들_엑셀데이터출력_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="관리하는사람들_엑셀데이터출력" sap:VirtualizedContainerService.HintSize="648,4587" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_다운로드폴더경로" />
+      <Variable x:TypeArguments="x:String" Name="str_엑셀파일명" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="lst_엑셀파일" />
+      <Variable x:TypeArguments="x:String" Name="str_inputFolderPath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;관리하는사람들_엑셀데이터출력 시작&quot;]" />
+    <ui:MultipleAssign DisplayName="변수 초기화_Multiple Assign" sap:VirtualizedContainerService.HintSize="586,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[lst_엑셀파일]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[New list(Of String)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_다운로드폴더경로]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[io_Config("DownloadFolderPath").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int64">[out_int_MaxNumber]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int64">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_inputFolderPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Path.Combine(io_Config("FolderPath").ToString,"input")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="1. 조회일자 입력&#xA;2. 조회버튼 클릭&#xA;3. 엑셀다운로드 " AttachMode="ByInstance" CloseMode="Never" DisplayName="가상계좌조회_Use Browser Chrome" sap:VirtualizedContainerService.HintSize="586,1810" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e1c31cbf-02bd-42ca-b7d2-c0fe0f250829" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="450,1536" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="in_str_처리일자 : &quot;yyyy-MM-dd&quot;" ClickBeforeTyping="True" DelayBefore="500" DisplayName="1. 조회일자 입력_Type Into" EmptyField="True" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[Now.AddDays(-1).ToString(&quot;yyyy-MM-dd&quot;)+ &quot;[k(enter)]&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eecbf02a-0d11-4560-8d47-122201c46053" InformativeScreenshot="a98fc12477d36b6fd91ce38eee6e9984" Selector="&lt;webctrl tag='INPUT' placeholder='날짜선택' idx='1' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="in_str_처리일자 : &quot;yyyy-MM-dd&quot;" ClickBeforeTyping="True" DelayBefore="500" DisplayName="2. 조회일자 입력_Type Into" EmptyField="True" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[Now.ToString(&quot;yyyy-MM-dd&quot;)+ &quot;[k(enter)]&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eecbf02a-0d11-4560-8d47-122201c46053" InformativeScreenshot="a98fc12477d36b6fd91ce38eee6e9984" Selector="&lt;webctrl tag='INPUT' placeholder='날짜선택' idx='2' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:TypeInto>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;처리일자 : &quot; + Now.AddDays(-1).ToString(&quot;yyyy-MM-dd&quot;) + &quot; ~ &quot; + Now.tostring(&quot;yyyy-MM-dd&quot;) +&quot; 입력완료&quot;]" />
+            <uix:NGetText sap2010:Annotation.AnnotationText="out_str_모계좌" DisplayName="모계좌_Get Text" sap:VirtualizedContainerService.HintSize="388,188" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="e1c31cbf-02bd-42ca-b7d2-c0fe0f250829" TextString="[out_str_모계좌]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/inq/EI_INQ030201_01" CvType="AnyWordGroup" DesignTimeRectangle="608, 465, 376, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'134-004-695222'" FullSelectorArgument="&lt;webctrl aaname='*-*-*' parentid='sub' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sub' tag='DIV' type='' class='' /&gt;" Guid="04398c09-4807-4acd-9536-6f0d6bd667b3" ImageBase64="" InformativeScreenshot="af847bd589bf3a9f42210c29d96b7e48.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="071213" CvType="Text" DesignTimeRectangle="408, 463, 69, 19" ElementType="Text" FriendlyName="'모계좌번호 필수 입력'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='모계좌번호 ' check:innerText='모계좌번호&amp;#xD;&amp;#xA;필수 입력' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAXCAYAAABH92JbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOOSURBVFhH7Zi/SyNBFMf3z9hWuCZwxaUzpQsWLlxxAYsLpApXSKpjuUJCGglXSLCQYCHBbi0EGyHXxXIthG0OcoWQK1KksNjCIoXF9978MrOb2dn11IODfOFhMj/ffObNm4kO1irUGlIJrSGV0BpSCb0tpPsJxtdjjH8lwO0A3rYH7ziWlcWaXwW8T3A1lyVlFWPA5vo6Qn7PBNFZH/3DISJyz6Y0pPkIARu80AbkRgnd9OA4DpyDKP2Z6W5EDjInzTa8STA/r/M+9fPlUk3g4mPh1+BWFiBCj821G1ogzRHuUhunjnAmi3KUhjQLUWeDuxUNiG41bLB6p0duSKk+GWtckHs2SOp7jjEwRkiGsuhA9OndyAIDJNWmnKXBmSHl7oCcXIeURBhqERDsVvhE3GEbJE3TU0/UddN1NkjVZudpzvYO88kOaXq19LHY0kfw5ZAyirrC4ZRZIU0xlIt03ADjB1lMskFy3y8jvPZO9s+acR0JptchBocBWrJ/fa+DwfkYk3vZJKNXhhSj/4HqXR8B25E9XzibC4mS50GNl/vNBqr01/3YRyx38QnS6QRJkiBZmMGpo+TvqUhow6fvK+t4IP+3XOGHnlI2N0SZs4HWxVQ2XsoMabuDS3YrrdgALT6YGdLiugOX6t39MWg91uM2Z2NJh91mSPG0QPTd4/2Zs/5JjKkEooyBsUGyHTem+KjK2/lHMW1PRr+HYu1ub+VSMkMqNAMktkubrM6nm0le/Sct0d4AaXHbQ43B+HaJyV3M28czutEIXnunhfD3MmpU/tFvPJMVQVK5zzuMXgCJdpOHtbKfsuOnISZ6OYt7XY9ThE0RFf4phasCoswAiWkhhzFFB5OpfDETQE22zClmSK9z3LIqzFEkelt15MQ1OmZ8hx4l7B8dMXkOJKUVGA9iI9Rxy8JjUrDiWWbDuHIgccnE3W3BcxkYF5XPAfpno5KJO6tCSJRHeOJ1zedcB5OCRJH3Re4iWYU7mzGaM7JAyos+oTIv7r94TKqXbMq2KiKR5jwuxauXduZuBY9QLiSWRNU4dbS76lbq01U8ogiJMJnbI8kOKaPMW05YBw12EztVNPazdWRny7xlh1Rghb+pLJDKyAZC1Xndy1ReSlsMYv2MC0kz7fTYj9tLpf+ofSNIdis+SmX0tpB06f8RKClrcl7ot22+mdL6c/XvIP3HWkMqoTWkElpDKhTwB7/a+mqVrPQ/AAAAAElFTkSuQmCC" SearchSteps="Selector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="조회버튼 클릭_Click" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4b7b415a-5762-48f1-aa31-b4a2ecec925e" InformativeScreenshot="ca346afd0fa09889656e43036c29ee3b" Selector="&lt;webctrl aaname='*조회*' parentid='sub' tag='BUTTON' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:RepeatNumberOfTimesX sap2010:Annotation.AnnotationText="최대 : 5분간 대기" DisplayName="조회버튼 클릭 후 대기_Repeat Number Of Times" sap:VirtualizedContainerService.HintSize="388,112" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="100" StartAt="1">
+              <ui:RepeatNumberOfTimesX.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
+                  </ActivityAction.Argument>
+                  <uix:NCheckState DisplayName="대기문구 식별_Check App State" sap:VirtualizedContainerService.HintSize="954,422" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e1c31cbf-02bd-42ca-b7d2-c0fe0f250829" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Delay DisplayName="3초간 대기_Delay" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Break sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Break_1" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/inq/EI_INQ030201_01" CvTextArgument="EA|Pl 7|Cl2| FAR." CvType="Text" DesignTimeRectangle="892, 597, 135, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'잠시만 기다려 주세요.'" FullSelectorArgument="&lt;webctrl tag='P' aaname='잠시만 기*.' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='잠시만 기*.' type='' class='mt-16 text-white' check:text='잠시만 기다려 주세요.' /&gt;" Guid="b347ed99-f4a1-4c28-9cb5-b7482dfd7593" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAYCAYAAADK6w4SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATCSURBVGhD7ZjXbuMwEEX3/z8pD3kIkiBBKtJ77z1Ir1wcYq92TJMy5djZAgq4sEQOqeHwcEj5x8DAgCsqylGBpShbBZaibBVYirL118AyODjoZmdn3djYWLS+6M+rgoVJmp+fj4q6zc1N9/r66p9tB3W6v7/3itWFmpycdM/Pz+7g4CBa30lqf3l5Ga0PhR32tIvVx1Q3nvHxcbe/v++Ojo6Soh67WHtpb2/P+7W8vJwcz8jIiFtZWXGHh4c+XgsLC36xhXa9VgULTr69vXl9fn566Zm6OlhwGLuwLgwu9+Gldp1gmZub8/XySaLPiYmJNljw9+Pj49dbfl+qD2FJ2Vt/wvFYTU9Pu5ubG3d3d+f1+PjoY/j09FSVUY+dbYcftk/FcnV1tQ0WgAA6/Hx/f3cPDw/+PTwzN1tbW5VtPxTdhnAeR4aHh6sywbKxseG3C0tyE1js4G27TrAMDQ15YLCVrq+vKz9jsBBQVrNtIzhCWEJhi2/KCPxib8dTp9PTUw/b+fl5tF5qAguLVmOy8Sc22NGOjKTyXqsNFsh/eXnxTpHqVG5XXhhk0mGvYGH10d/MzExlFxPBoj+A4TkGC33za9tJ2IXjsBIsTDp23JMp7HhS0qSSTYgZ40xtE/hv+6yDhf6wjfVFvJi31GLrhVpgwQmc46WkTxwjxVOnzBICgRgwQVlbW2spp70NBPedYOG9t7e3bmlpqbKLiRVEW1YZz93AwnhOTk7c7u6uz5i8V1sGvgKHDX44Hivejy/4TyzolxVPe54ppz6Ek/6o297e9v5gm4KFOLPtcGaxfaAwHv1QBQtbC8HCWfY+JgvncaDuzKJMRGDDlBsGV8868JFF6N/CkrMyLNQ6A3QDCz6TAfCJbMY95fIPcXhUm3A8ViwU/GFCiaWtm5qachcXF77eniuUDXgvcLDNAlkKFs0JMHNPHAAS0OkH6EIYe6kKFgKDczY7kFUYJM6kYKEd5djxazNCGFxgJBBWvJMgNYGFdwK1te0GFuwV3JQ946VcVwyW2HkqJeyUGQBUkyy/GRPvi8GCmB/gAnRd3NNPp637q2rZhjgokpK1qkKR4uynH6uESQMUykmRDJCgUF+3EkPlwMJKYuURHIJo9+4cWPgLYHFx0SsXFqvUeACAvmgvaUL5teUsqPX19SpLnJ2dVWcc4tkJFmJLvY1TOJZ+qQUWBRxKtXdLgICTAkGTRp1WCnWsEuyYkFhwFQz1I5HFsCVwtlxiT9bnKAG2oKAYLIAcXrQH7hgs2NvJ5Z4yAZSCJaY6+NjaAIVYsY1qWxU8tPtnYAkdRAyawWiS+T0+Pm47bJFhtBU1gaWTWHV8JoeHaCn0Hb+0NdjUL4UBJoWzLSiL8j7aUs42g02vYAGOnZ2d6uNBZaOjo8nMgj/4xdcZAHPek6/4xNywgHkmRswB7ZkjveOr6hqWHKVgYcVyDqKvUEysJqeJ6nyPKYQlR72CpU4pWIAkzPYpcVzg6wqorq6u2t7RraKwpK6mGSEFS93V9B3S/wILi4iswTbeZDzfoRZYei32Y33a9lukcT5Zcycfu/Cf6E5qMh5tg+H2l6um4/kO9RWWov9LBZaibBVYirJVYCnKVoGlKFsFlqJMDbifAE4SJPYPCocAAAAASUVORK5CYII=" InformativeScreenshot="d838a3abf97cee5cc38887d41da2bef9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </ActivityAction>
+              </ui:RepeatNumberOfTimesX.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RepeatNumberOfTimesX>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="일괄엑셀다운로드 버튼 클릭_Click" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4b7b415a-5762-48f1-aa31-b4a2ecec925e" InformativeScreenshot="41ec8066ab733e23c6dad401b0be0229" Selector="&lt;webctrl aaname='*엑셀* ' parentid='sub' tag='BUTTON' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:RepeatNumberOfTimesX sap2010:Annotation.AnnotationText="최대 : 5분간 대기" DisplayName="조회버튼 클릭 후 대기_Repeat Number Of Times" sap:VirtualizedContainerService.HintSize="388,112" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_2" NumberOfTimes="100" StartAt="1">
+              <ui:RepeatNumberOfTimesX.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
+                  </ActivityAction.Argument>
+                  <uix:NCheckState DisplayName="대기문구 식별_Check App State" sap:VirtualizedContainerService.HintSize="954,422" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="e1c31cbf-02bd-42ca-b7d2-c0fe0f250829" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Delay DisplayName="3초간 대기_Delay" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Break sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Break_2" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/inq/EI_INQ030201_01" CvTextArgument="EA|Pl 7|Cl2| FAR." CvType="Text" DesignTimeRectangle="892, 597, 135, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'잠시만 기다려 주세요.'" FullSelectorArgument="&lt;webctrl tag='P' aaname='잠시만 기*.' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='잠시만 기*.' type='' class='mt-16 text-white' check:text='잠시만 기다려 주세요.' /&gt;" Guid="b347ed99-f4a1-4c28-9cb5-b7482dfd7593" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAYCAYAAADK6w4SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATCSURBVGhD7ZjXbuMwEEX3/z8pD3kIkiBBKtJ77z1Ir1wcYq92TJMy5djZAgq4sEQOqeHwcEj5x8DAgCsqylGBpShbBZaibBVYirL118AyODjoZmdn3djYWLS+6M+rgoVJmp+fj4q6zc1N9/r66p9tB3W6v7/3itWFmpycdM/Pz+7g4CBa30lqf3l5Ga0PhR32tIvVx1Q3nvHxcbe/v++Ojo6Soh67WHtpb2/P+7W8vJwcz8jIiFtZWXGHh4c+XgsLC36xhXa9VgULTr69vXl9fn566Zm6OlhwGLuwLgwu9+Gldp1gmZub8/XySaLPiYmJNljw9+Pj49dbfl+qD2FJ2Vt/wvFYTU9Pu5ubG3d3d+f1+PjoY/j09FSVUY+dbYcftk/FcnV1tQ0WgAA6/Hx/f3cPDw/+PTwzN1tbW5VtPxTdhnAeR4aHh6sywbKxseG3C0tyE1js4G27TrAMDQ15YLCVrq+vKz9jsBBQVrNtIzhCWEJhi2/KCPxib8dTp9PTUw/b+fl5tF5qAguLVmOy8Sc22NGOjKTyXqsNFsh/eXnxTpHqVG5XXhhk0mGvYGH10d/MzExlFxPBoj+A4TkGC33za9tJ2IXjsBIsTDp23JMp7HhS0qSSTYgZ40xtE/hv+6yDhf6wjfVFvJi31GLrhVpgwQmc46WkTxwjxVOnzBICgRgwQVlbW2spp70NBPedYOG9t7e3bmlpqbKLiRVEW1YZz93AwnhOTk7c7u6uz5i8V1sGvgKHDX44Hivejy/4TyzolxVPe54ppz6Ek/6o297e9v5gm4KFOLPtcGaxfaAwHv1QBQtbC8HCWfY+JgvncaDuzKJMRGDDlBsGV8868JFF6N/CkrMyLNQ6A3QDCz6TAfCJbMY95fIPcXhUm3A8ViwU/GFCiaWtm5qachcXF77eniuUDXgvcLDNAlkKFs0JMHNPHAAS0OkH6EIYe6kKFgKDczY7kFUYJM6kYKEd5djxazNCGFxgJBBWvJMgNYGFdwK1te0GFuwV3JQ946VcVwyW2HkqJeyUGQBUkyy/GRPvi8GCmB/gAnRd3NNPp637q2rZhjgokpK1qkKR4uynH6uESQMUykmRDJCgUF+3EkPlwMJKYuURHIJo9+4cWPgLYHFx0SsXFqvUeACAvmgvaUL5teUsqPX19SpLnJ2dVWcc4tkJFmJLvY1TOJZ+qQUWBRxKtXdLgICTAkGTRp1WCnWsEuyYkFhwFQz1I5HFsCVwtlxiT9bnKAG2oKAYLIAcXrQH7hgs2NvJ5Z4yAZSCJaY6+NjaAIVYsY1qWxU8tPtnYAkdRAyawWiS+T0+Pm47bJFhtBU1gaWTWHV8JoeHaCn0Hb+0NdjUL4UBJoWzLSiL8j7aUs42g02vYAGOnZ2d6uNBZaOjo8nMgj/4xdcZAHPek6/4xNywgHkmRswB7ZkjveOr6hqWHKVgYcVyDqKvUEysJqeJ6nyPKYQlR72CpU4pWIAkzPYpcVzg6wqorq6u2t7RraKwpK6mGSEFS93V9B3S/wILi4iswTbeZDzfoRZYei32Y33a9lukcT5Zcycfu/Cf6E5qMh5tg+H2l6um4/kO9RWWov9LBZaibBVYirJVYCnKVoGlKFsFlqJMDbifAE4SJPYPCocAAAAASUVORK5CYII=" InformativeScreenshot="d838a3abf97cee5cc38887d41da2bef9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </ActivityAction>
+              </ui:RepeatNumberOfTimesX.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RepeatNumberOfTimesX>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVDhPfdM7aBRBHMfxyUUv3s5iQrRKYxNsrIUYUBJSCcYkl9sxHETwUaiIhY8mFoKIloqIoEeUoDdzmhiiIOeDFBoR1IjiAxvBF6YRG20EA/r9XVY9Ujjwudmdx/8/MztnFpecK5vYVYxN/LBNwnnrwmV0IR2xqNikLA3WVbJ2aNxESVjK4EHMYhLTuEOwDcuSkKFusAWfbR4YMy39F/8GaGTQlsj5tsiF3Tw/wG2Mp/V1PEQf/e0EyZt9M2ZFb0kBvLTSqaXuwjQDOqzz23lWgCp60Idb2INSlJSzEXMNA6WTRmW5gMNsR231AbrN00BbOJO6QdJVSq5G2Qpf63Bh/UKAsB8T0Bb6YVh+kboCknkO9l8A7fsSqhziWuodeI7jOIsZbGaCtqGDvcI2eefL6Ac7oQD3cQ86sGNpmz7lSSjgE2iVV7ERtUNcQ+RtvLzCeyjDCSirBmqCAms1N/EWz5BnFauVPcEU3kDZxvAaexkQk2Alz0fwkvdT1NfwCNpGBwfj23hRFi1dK/iEWTq7mLyc1TXz3gsFVd8H6GBHo0Ilt3BtXRiClvURp1HCC9yFbqL2r+xlzOExCbphTFwI8E00HsQXfAOH57kPYYRPR+1HeNYn/YF3TBzO5UMmYm6tMEiydG6C7sNnfGWgvs5RfIcO7xzWkTQT6wvUFzswauJi1fCHWcKgQ/iFA9DNmydY0Q6Gxtqy/1cYLLpY9QF+MlGrS0f9Kcb8BmrxV4E/0j2YAAAAAElFTkSuQmCC" InformativeScreenshot="b835e26959ac9b76f6b12c8c78cdca7a.jpg" Selector="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" Title="가상계좌조회 | 조회 | 신협 기업뱅킹" Url="https://bizbank.cu.co.kr/inq/EI_INQ030201_01" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:ForEachFileX sap2010:Annotation.AnnotationText="str_다운로드폴더경로 : C:\Users\Desk3\Downloads&#xA;&#xA;1. 다운로드폴더에서 파일 읽어오기&#xA;2. 가상계좌에 해당하는 엑셀파일만 리스트변수에 담기" DisplayName="다운로드폴더에 파일 읽어오기_For Each File In Folder" Folder="[str_다운로드폴더경로]" sap:VirtualizedContainerService.HintSize="586,942" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <If Condition="[CurrentFile.FullName.Contains(&quot;가상계좌입금&quot;)]" DisplayName="가상계좌엑셀파일만 불러오기_If" sap:VirtualizedContainerService.HintSize="510,612" sap2010:WorkflowViewState.IdRef="If_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="476,430" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap2010:Annotation.AnnotationText="다운로드폴더 경로에서 가상계좌가 포함된 엑셀파일만 가져온다&#xA;* 확장자 제외&#xA;" DisplayName="가져온 파일정보 수정_Assign" sap:VirtualizedContainerService.HintSize="434,138" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[str_엑셀파일명]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[path.GetFileNameWithoutExtension(CurrentFile.FullName.Split({"\"},system.StringSplitOptions.RemoveEmptyEntries).Last).ToString]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" sap2010:Annotation.AnnotationText="리스트에 담는다." DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5" ItemToAppend="[str_엑셀파일명]" List="[lst_엑셀파일]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uasa:AppendItemToList>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11" />
+            </If.Else>
+          </If>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachFileX>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="1. 리스트에 담긴 파일명을 하나씩 읽어오기&#xA;2. 파일명의 숫자부분이 제일 큰 파일명만 가져오기&#xA;&#xA;int_MaxNumber : 초기값 0" DisplayName="리스트에 담긴 파일명 가져오기_For Each" sap:VirtualizedContainerService.HintSize="586,818" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[lst_엑셀파일]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="552,560" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_엑셀Number" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="파일명에서 숫자부분만 가져오기_Assign" sap:VirtualizedContainerService.HintSize="510,81" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_엑셀Number]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[currentItem.Split({"_"},system.StringSplitOptions.RemoveEmptyEntries).Last]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[Convert.ToInt64(str_엑셀Number) &gt; out_int_MaxNumber]" DisplayName="MaxNumber와 엑셀에 적힌 숫자 크기 비교_If" sap:VirtualizedContainerService.HintSize="510,351" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="엑셀의 숫자부분 할당_Assign" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int64">[out_int_MaxNumber]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int64">[Convert.ToInt64(str_엑셀Number)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="다운로드 폴더 &gt; input폴더로 이동" Destination="[str_inputFolderPath]" DisplayName="엑셀파일 input Folder로 이동_Move File" sap:VirtualizedContainerService.HintSize="586,190" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[Path.Combine(io_Config(&quot;DownloadFolderPath&quot;).ToString, &quot;가상계좌입금내역_&quot;+ out_int_MaxNumber.ToString+&quot;.xlsx&quot;)]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MoveFile>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;관리하는사람들_엑셀데이터출력 종료&quot;]" />
+  </Sequence>
+</Activity>

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "infra-bedrock-322602",
+  "private_key_id": "1590927f0586a22ce7655d8f63ba91ce194c784e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCmaFGgXgN0O33t\n7m5/UzQ0b43wc12mtRRd7tF9zfL6QXnOHRuWN8fWDujKutlv+5VT3RzbV7tNZ1CN\nv6eUlJ4yGdBG2vv613liomt1U0BFilEIJRBEu8JOmQZ+2YmDElgM2jtWM2qVHT3K\nbVA4zfgPxU9coHa14z36UO3eUpQfRvnoZvKlDOXyqsZWY8SUGJEtBYv5+nposee1\njVXwbxuLCHY/EKtonVOxJXMxG0F8IbrUfdD02AtrnrEJnVz5tci64KzJiab8fNKO\nUbDoo8u+tfXv9o8R8RBrDVkHfmIkkzcqwnZ7XIfJ24/4hg6mVs6xzr+HCa9Fto+5\niGYo0h3xAgMBAAECgf82jCY1q0ZL6N8etJ8D8wI/LfzDv7gIgtMU93PfCTjcpRnd\ntoI/JjRwtp0YgfyZ+J4PyitAu0FqiLNJw8lAVcyFdRtmHoz6wicdbfWg6pPm4lrY\nO04EjzI3vBxPoyoFt72lI47PyDWSgO4AV6o0Sfqb23xoSzFJQ3Qi2Y8fkXInI1Wh\nucibCfHbkUwj5B4X0fQaGDMk1/rejTSNClxxUU/g7P/yTzyTXbrBQSN1WM0Vyiav\nw/Aigxm5gqQdkxKfvUlcEaqegRb8nxhpQOfe14DF9CWN+gdpfDHp6L1QTgkzAia+\nyRxUDC9vQy4o06HBnLy1spRZYxW2p3iq4eIipJECgYEAz4I1btyqhbfb4RuuSZ3m\neNlp2uNwkdPO15ny2EJuOD11k1HD8VzD45SRdE6T3A1Gs78m2dqBeAHNQpc+OVXH\nCdgreSYv4VjeRvGM/7mywDnQijqt+QmpRF0LNms31/0NoNeOfbj1R4gEooSHEMAU\ni1G21Sad+Y1x5QCPWCbKMYkCgYEAzUtRCsenn9ikOL4TAoJ2FYOCXb0svXoY+/dD\nTrNOKBtGe5g1itt8/NWzFNx44G3Q5p2aNS7T84yP/3oabwv5L/c7WbSgD+YWy5OR\npNtPfhNkREdWkUmSdzMPpmEpQS5AIeGBL5PoGWprjNVXVZtIIVgoUfS7vIf/+M3B\nu9c99ykCgYAcvLeRptWmtxOoVSEJ6OgmDFXwjlbkmySmDxfmgyyodTp3MHemUWZ/\nee+637byXpRQCETlHrGXYQiAFFn1rr9lyZ4bpQI0fw4pXQJd1+W9YURUIFQ/jOr4\nILqQysBtFQpyH+gH2Tl+soORzjC2TSOLN8HOOw7dpI0FXdJ8LsMJoQKBgQDFTNI5\nYwK1fBbwNbS9X7avHHHJN0ttWo/ycIPueiLuJrCJjhI/PoyTzanLrcw6HTB8wxD2\ndefblMa7yJTpDn/RWnFe2FpQjVhxFIUQBHoUd/yQJmOLREMQbjFnPM/SRen65egr\nWqHg80cj1dGWg6NB8KDniyZ2ndojO1Qq/EUgaQKBgBCRstgcJihOvH88v59RvVnL\nMpYiEfxYfF804AcDwpcCSplDSU7zw/BUBhiKL2tT/gqQh99dgM3f2Frluxv/OtOk\nhtFtAFUZncGz5UWHWt2pZm0YrBzzY+H318Y1U7c5w+LwttGjM96ksVE1m2oN/qu4\nIEGSxoVAfqeMRJzMWNTu\n-----END PRIVATE KEY-----\n",
+  "client_email": "rpa-555@infra-bedrock-322602.iam.gserviceaccount.com",
+  "client_id": "117376253012514408559",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rpa-555%40infra-bedrock-322602.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

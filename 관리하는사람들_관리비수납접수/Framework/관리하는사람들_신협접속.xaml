@@ -1,0 +1,445 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="관리하는사람들_신협접속" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="io_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>925,1224</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>관리하는사람들_신협접속_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="관리하는사람들_신협접속" sap:VirtualizedContainerService.HintSize="1253,4798" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_신협URL" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sstr_신협공인인증서비밀번호" />
+      <Variable x:TypeArguments="x:Boolean" Name="is_로그인버튼" />
+      <Variable x:TypeArguments="x:Boolean" Name="is_로그아웃버튼" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1191,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;관리하는 사람들_신협접속 시작&quot;]" />
+    <ui:MultipleAssign DisplayName="변수 초기화_Multiple Assign" sap:VirtualizedContainerService.HintSize="1191,101" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_신협URL]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[io_Config("신협URL").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" sap2010:Annotation.AnnotationText="Asset Name : 신협_공인인증서_비밀번호&#xA;* 사용자 이름은 사용x &#xA;* 암호 변수값만 사용 예정&#xA;    변수명 : sstr_신협공인인증서비밀번호" AssetName="신협_공인인증서_비밀번호" CacheStrategy="None" DisplayName="신협 공인인증서 가져오기_Get Credential" FolderPath="관리하는사람들" sap:VirtualizedContainerService.HintSize="1191,215" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sstr_신협공인인증서비밀번호]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotCredential>
+    <Sequence sap2010:Annotation.AnnotationText="1. 사이트 접속&#xA;2. 로그인 여부 확인 &#xA;3. 로그인 시 로그아웃 후 재 접속 시도 " DisplayName="Sequence - 로그인 상태 확인" sap:VirtualizedContainerService.HintSize="1191,2466" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:RetryScope sap2010:Annotation.AnnotationText="인터벌 3초&#xA;재시도 횟수 : 3회" DisplayName="신협 접속 시도_Retry Scope" sap:VirtualizedContainerService.HintSize="1129,2298" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="3" RetryInterval="00:00:03">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <uix:NApplicationCard sap2010:Annotation.AnnotationText="str_신협URL : https://bizbank.cu.co.kr/&#xA;1. 사이트 접속" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome - 신협 기업뱅킹" sap:VirtualizedContainerService.HintSize="1087,1967" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" ScopeGuid="6c68f6d2-1abf-4ee5-bfa0-5f243811dadc" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="로그인버튼 확인_실행" sap:VirtualizedContainerService.HintSize="1053,1708" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheckState sap2010:Annotation.AnnotationText="is_로그인버튼" DisplayName="로그인 버튼 확인_Check App State " Exists="[is_로그인버튼]" sap:VirtualizedContainerService.HintSize="991,703" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="6c68f6d2-1abf-4ee5-bfa0-5f243811dadc" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="타겟이 나타남 - 로그인 버튼 클릭" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;is_로그인버튼 : &quot; + is_로그인버튼.Tostring]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="3" DisplayName="로그인 버튼 클릭_Click " sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c68f6d2-1abf-4ee5-bfa0-5f243811dadc" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/" CvElementArea="1618, 88, 53, 30" CvTextArea="1628, 95, 33, 13" CvTextArgument="2191" CvType="Button" DesignTimeRectangle="1620, 89, 49, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'로그인'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*로그인*' innertext='*로그인*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='*로그인*' innertext='*로그인*' type='' class='btn btn-outline-gray btn-xs' check:text='로그인' /&gt;" Guid="520645da-46c5-4957-9b68-d7dbcd263f79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADUAAAAgCAYAAACy/TBYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIpSURBVFhH7Zgxa9tAGIbzK/QrNHbr1kzNKMgSuggyBDI0dChZgjfRpWgJSmkQHYqzOZNpcS+bMgRkKCjNYkLAgQxyKWjoILy8vdc5yVYsReC0qiX8wAfW6WS9z+nuBFpDA2m+1Gj0E1++fsPH409wjo5rUczKzMyekEqxkR0uf1xhPB6r1uWHWZmZ2ROxVIq2PFlXmJ0OJJWiaZ2e0EOYnQ4kleL8rDuJw0pq2VlJ/TduBJxDB+JGHZfwBKkA7qYBo6BavVD1i+CfOJNQudUbqn5APOjCfn1/vfnWhf9Lnejb0DQNdl8dl/CkJxVHEaK5ErBkAPO0TMrCzgsN2nv/vttdFzu6DuOgDXEu5V7p0F7aCGJ5rjqpIcRcUNY+tjJSRYTobE+lwlNTBregFIHbDkxNh/1d/q5Oyoctb7S+a+WIOWj3I9WviKxU1NuXwffQVWMRX1hY17bQ5jqqWsr8PMiZgrJ+q26FDNHelIPyIUiPO7tyyunP5ZrawDP53xtSmLOvcineLLeStVKIGpTMNI0RXgqIMw/+YOZJV7lRTMkLWELkwd424HLNpKhNZWZHnFCJVBwiOPfgpeViT97UeNedafMQ3I0e386TOvGlDsmus0VZTCoUaD14L+VVq3e9mNQbNzM400GarLBSFpP6Z4QQB/kDxJq+0B9nyaT+DiupurCSqgtzUo388NLIT2SN/JhJ2EhbduD8rEMxKzMnQiQj1RQaKAX8AYaVtLap//GwAAAAAElFTkSuQmCC" InformativeScreenshot="1f78fc9c40c7939da6fd9add2db270c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvTextArgument="2ZHAE" CvType="Text" DesignTimeRectangle="1542, 95, 48, 16" ElementType="Text" FriendlyName="'고객센터'" FullSelectorArgument="&lt;webctrl aaname='고객센터' tag='*' innertext='고객센터' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='고객센터' tag='*' innertext='고객센터' type='' class='' check:text='고객센터' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAUCAYAAADC1B7dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVFhH7ZYxa9tAFMf7KfQpbjR0KGTRFG8RZGg2gwdDhkKGEgpBW+hi1CGILh61FGQIeDHqEFA2GQLK5qGgwYOGggYPggz/Pkkn+049n5LiOKb4Dw90T+9O73d3707v8J/pALTvOgCJyrMMmWQ5eWOMTm0EKT3OHBh9H8WjqLJfEcqVTm1YVwHFRXCMHvwFf9GmYnzDoV5ryUBlgKE1Z8Zjy8QtWLUdMRjnEzkpJVAKv2+gN15703GPx8lA0VCVgwDQCvSUN2ZctADXEpCsaMhgfo+Lp+0CDcV0G2oF0qr42AagZQibmXAfi0YVt5rRv4ASeKcGzBuCX/joSXF7AZQg+NKF+TVCVRZCUqoVenRhMgbGbITLyqVdoY+XcG/clXmzDMmUtz+fvQDoYUS1MaJKqRXRlrPg/eLNQmkIt99B55OP5In7dEAZvTtmGNwmiL91wc49zLMWoIsRwvtwZfEi/0eg5nKW22OASZ0dve8wC/Z4DspJ0AagnPxHBrq0haqVpJW9sjD4kSDZSQ01gx8csEZn0Krki1iaQcnuAkzu5hyAYn/L6LV2cygoglUq7xDx+BbtuCNvuVLVKSfW4qZ7qAR6312Pd/KBJpV89Zg6oGzmScVX7c8zXIq+2qYJ79Wi4oPPANqopeL6EC7klwHpbAtA1z8VydbGT79W6YBeRRqg9c2vMF3diNo5UPnnIe6RLUsx/usCvYEOQPst4A8ir6W1PpRxCwAAAABJRU5ErkJggg==" SearchSteps="Selector, Image, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="타겟이 나타나지 않음 - 로그인 상태 시 로그아웃 후 다시 로그인 버튼 클릭" sap:VirtualizedContainerService.HintSize="487,258" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="425,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;is_로그인버튼 : &quot; + is_로그인버튼.Tostring]" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/" CvElementArea="1618, 88, 52, 30" CvTextArea="1628, 95, 33, 13" CvTextArgument="2191" CvType="Button" DesignTimeRectangle="1620, 89, 49, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'로그인'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname=' 로그인 ' innertext=' 로그인 ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname=' 로그인 ' innertext=' 로그인 ' type='' class='btn btn-outline-gray btn-xs' check:text='로그인' /&gt;" Guid="8737f38f-2c7b-40d5-bb69-7d46be5edabf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADUAAAAgCAYAAACy/TBYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIpSURBVFhH7Zgxa9tAGIbzK/QrNHbr1kzNKMgSuggyBDI0dChZgjfRpWgJSmkQHYqzOZNpcS+bMgRkKCjNYkLAgQxyKWjoILy8vdc5yVYsReC0qiX8wAfW6WS9z+nuBFpDA2m+1Gj0E1++fsPH409wjo5rUczKzMyekEqxkR0uf1xhPB6r1uWHWZmZ2ROxVIq2PFlXmJ0OJJWiaZ2e0EOYnQ4kleL8rDuJw0pq2VlJ/TduBJxDB+JGHZfwBKkA7qYBo6BavVD1i+CfOJNQudUbqn5APOjCfn1/vfnWhf9Lnejb0DQNdl8dl/CkJxVHEaK5ErBkAPO0TMrCzgsN2nv/vttdFzu6DuOgDXEu5V7p0F7aCGJ5rjqpIcRcUNY+tjJSRYTobE+lwlNTBregFIHbDkxNh/1d/q5Oyoctb7S+a+WIOWj3I9WviKxU1NuXwffQVWMRX1hY17bQ5jqqWsr8PMiZgrJ+q26FDNHelIPyIUiPO7tyyunP5ZrawDP53xtSmLOvcineLLeStVKIGpTMNI0RXgqIMw/+YOZJV7lRTMkLWELkwd424HLNpKhNZWZHnFCJVBwiOPfgpeViT97UeNedafMQ3I0e386TOvGlDsmus0VZTCoUaD14L+VVq3e9mNQbNzM400GarLBSFpP6Z4QQB/kDxJq+0B9nyaT+DiupurCSqgtzUo388NLIT2SN/JhJ2EhbduD8rEMxKzMnQiQj1RQaKAX8AYaVtLap//GwAAAAAElFTkSuQmCC" InformativeScreenshot="11ac496dafaa8913260aa548dca6bda5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='신협 기업뱅킹' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CvTextArgument="2ZHAE" CvType="Text" DesignTimeRectangle="1542, 95, 48, 16" ElementType="Text" FriendlyName="'고객센터'" FullSelectorArgument="&lt;webctrl aaname='고객센터' tag='*' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='고객센터' tag='*' type='' class='' check:text='고객센터' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAUCAYAAADC1B7dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVFhH7ZYxa9tAFMf7KfQpbjR0KGTRFG8RZGg2gwdDhkKGEgpBW+hi1CGILh61FGQIeDHqEFA2GQLK5qGgwYOGggYPggz/Pkkn+049n5LiOKb4Dw90T+9O73d3707v8J/pALTvOgCJyrMMmWQ5eWOMTm0EKT3OHBh9H8WjqLJfEcqVTm1YVwHFRXCMHvwFf9GmYnzDoV5ryUBlgKE1Z8Zjy8QtWLUdMRjnEzkpJVAKv2+gN15703GPx8lA0VCVgwDQCvSUN2ZctADXEpCsaMhgfo+Lp+0CDcV0G2oF0qr42AagZQibmXAfi0YVt5rRv4ASeKcGzBuCX/joSXF7AZQg+NKF+TVCVRZCUqoVenRhMgbGbITLyqVdoY+XcG/clXmzDMmUtz+fvQDoYUS1MaJKqRXRlrPg/eLNQmkIt99B55OP5In7dEAZvTtmGNwmiL91wc49zLMWoIsRwvtwZfEi/0eg5nKW22OASZ0dve8wC/Z4DspJ0AagnPxHBrq0haqVpJW9sjD4kSDZSQ01gx8csEZn0Krki1iaQcnuAkzu5hyAYn/L6LV2cygoglUq7xDx+BbtuCNvuVLVKSfW4qZ7qAR6312Pd/KBJpV89Zg6oGzmScVX7c8zXIq+2qYJ79Wi4oPPANqopeL6EC7klwHpbAtA1z8VydbGT79W6YBeRRqg9c2vMF3diNo5UPnnIe6RLUsx/usCvYEOQPst4A8ir6W1PpRxCwAAAABJRU5ErkJggg==" SearchSteps="Selector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <uix:NCheckState sap2010:Annotation.AnnotationText="is_로그아웃" DisplayName="로그아웃 버튼 확인_Check App State" Exists="[is_로그아웃버튼]" sap:VirtualizedContainerService.HintSize="991,850" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="6c68f6d2-1abf-4ee5-bfa0-5f243811dadc" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="450,602" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;is_로그아웃버튼 : &quot; + is_로그아웃버튼.Tostring]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="로그아웃 버튼 클릭_Click " sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6c68f6d2-1abf-4ee5-bfa0-5f243811dadc" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/myp/EI_MYP090101_01" CvElementArea="1609, 88, 62, 29" CvTextArea="1617, 95, 45, 14" CvTextArgument="270%" CvType="Button" DesignTimeRectangle="1610, 89, 59, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'로그아웃'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*로그아웃*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='*로그아웃*' type='' class='btn btn-red btn-xs' check:text='로그아웃' /&gt;" Guid="62fa0506-124f-4542-b34b-914828db7fc4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAgCAYAAACl36CRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALrSURBVGhD7Zk/a9tAGMb7TTp069CvkC1fIEM7FErxkiUBQzyGQAqFBjJ4KHgIeChkCPaWoaSDyRLSDDUtxHiw6WBIwIljS5YtWY789H2lO0W2z5aVElokP/CA7+69P7+7052QnyHBWsJL2b8u0Xr9DtcvXuH6+ct4mZiYjRmlfHjOjCX0pIlRToAP7664KjiGZlaWD5+IVZcmVtYDvCooxmYt4VmqgDibtYRnqQL+rbMwq3XYh5mJ/DXc7eTQLx7DdF1Ad2cdt2Mx4WZFhte+NTAyrBmuoCdj0wXYNPjhDJv7ss1VtA/Oca9Rfe0G9pcMmm5+AUMal3O2J+LIb/OwNcocWnCuRFtXOkYcqFHfKdlmuFmR4ZtvNtFOZ6Zs/NCplTr6MnYW/G+Oo/EfibjdcziUHjWprMFlFuzsKpUp4I/qXrk/ccL7ZYyCbS5gVmT49mF5Goh83+JWAvCzLGDlQA1+2TLK6Lrl27CalK4W6LcCPkV5FlfW4dRE37UbOBxoUd9PvfL6mbc6zgS85xMBMcdj8B8w4EmrMaxX3q9RWjuHLuDRalC7ZfTTov7Ke+j5Y1gXos+LU5j5PbRWRPmCZj0SvgFTsfXb6c3wQWS9LWofcDoC/Hfe8uFadOuzHgk/SzoGu+p6vt3n9iHO2/YVGO6kZWEblL7M0++Jbb+VE6e7cKlOk2hhWArkkbtbop8QsyLDB+1NxALPecDtYh1O8FYIHnhNfqBpYj7OOPCC3sjTBJzA2FCULWBWJPjO5/FZtmo8WLqeAnlmMYdOyDUnLe/wu9ypd2W16rBy66K/efCr/g50vsr4aGZFgu/9nLzXVaZVjQiv9jT8bSoDjRZgUBOHbuPGHbtTPUXvE505qbVA/flm/dW2f1pPw3dKBOu+4FRg7jAovSBlT2CLFx2ntO3Hhpn1H8M/rVlLeJYqIM5mLeFZqoA4m/UAn+QPmIn+dJ3oPy1YnOnugDhOAjExmwRnjcEnTQmGB/4A24cXyJ9JQtQAAAAASUVORK5CYII=" InformativeScreenshot="4f5afa5cb1878c31f757253462cd696e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*업뱅킹' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="기업뱅킹 창 닫기_Close Window " sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="33bd280de646aa1a0b8c009ac7dfc2a7" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*Chrome' /&gt;&lt;ctrl name='* Chrome*' role='pane' /&gt;&lt;ctrl name='*기업뱅킹' role='page tab' /&gt;" WaitForReady="INTERACTIVE" />
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;is_로그아웃버튼 : &quot; + is_로그아웃버튼.Tostring]" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/myp/EI_MYP090101_01" CvElementArea="1609, 88, 62, 29" CvTextArea="1617, 95, 45, 14" CvTextArgument="270%" CvType="Button" DesignTimeRectangle="1610, 89, 59, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'로그아웃'" FullSelectorArgument="&lt;webctrl tag='BUTTON' innertext='*로그아웃*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' innertext='*로그아웃*' type='' class='btn btn-red btn-xs' aaname=' 로그아웃 ' check:text='로그아웃' /&gt;" Guid="7160a4ce-55d8-4f5b-9c0e-9342aa04f7f9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAgCAYAAACl36CRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALrSURBVGhD7Zk/a9tAGMb7TTp069CvkC1fIEM7FErxkiUBQzyGQAqFBjJ4KHgIeChkCPaWoaSDyRLSDDUtxHiw6WBIwIljS5YtWY789H2lO0W2z5aVElokP/CA7+69P7+7052QnyHBWsJL2b8u0Xr9DtcvXuH6+ct4mZiYjRmlfHjOjCX0pIlRToAP7664KjiGZlaWD5+IVZcmVtYDvCooxmYt4VmqgDibtYRnqQL+rbMwq3XYh5mJ/DXc7eTQLx7DdF1Ad2cdt2Mx4WZFhte+NTAyrBmuoCdj0wXYNPjhDJv7ss1VtA/Oca9Rfe0G9pcMmm5+AUMal3O2J+LIb/OwNcocWnCuRFtXOkYcqFHfKdlmuFmR4ZtvNtFOZ6Zs/NCplTr6MnYW/G+Oo/EfibjdcziUHjWprMFlFuzsKpUp4I/qXrk/ccL7ZYyCbS5gVmT49mF5Goh83+JWAvCzLGDlQA1+2TLK6Lrl27CalK4W6LcCPkV5FlfW4dRE37UbOBxoUd9PvfL6mbc6zgS85xMBMcdj8B8w4EmrMaxX3q9RWjuHLuDRalC7ZfTTov7Ke+j5Y1gXos+LU5j5PbRWRPmCZj0SvgFTsfXb6c3wQWS9LWofcDoC/Hfe8uFadOuzHgk/SzoGu+p6vt3n9iHO2/YVGO6kZWEblL7M0++Jbb+VE6e7cKlOk2hhWArkkbtbop8QsyLDB+1NxALPecDtYh1O8FYIHnhNfqBpYj7OOPCC3sjTBJzA2FCULWBWJPjO5/FZtmo8WLqeAnlmMYdOyDUnLe/wu9ypd2W16rBy66K/efCr/g50vsr4aGZFgu/9nLzXVaZVjQiv9jT8bSoDjRZgUBOHbuPGHbtTPUXvE505qbVA/flm/dW2f1pPw3dKBOu+4FRg7jAovSBlT2CLFx2ntO3Hhpn1H8M/rVlLeJYqIM5mLeFZqoA4m/UAn+QPmIn+dJ3oPy1YnOnugDhOAjExmwRnjcEnTQmGB/4A24cXyJ9JQtQAAAAASUVORK5CYII=" InformativeScreenshot="7bf082de456beb31b1da39cad2c57cde.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVDhPfdM7aBRBHMfxyUUv3s5iQrRKYxNsrIUYUBJSCcYkl9sxHETwUaiIhY8mFoKIloqIoEeUoDdzmhiiIOeDFBoR1IjiAxvBF6YRG20EA/r9XVY9Ujjwudmdx/8/MztnFpecK5vYVYxN/LBNwnnrwmV0IR2xqNikLA3WVbJ2aNxESVjK4EHMYhLTuEOwDcuSkKFusAWfbR4YMy39F/8GaGTQlsj5tsiF3Tw/wG2Mp/V1PEQf/e0EyZt9M2ZFb0kBvLTSqaXuwjQDOqzz23lWgCp60Idb2INSlJSzEXMNA6WTRmW5gMNsR231AbrN00BbOJO6QdJVSq5G2Qpf63Bh/UKAsB8T0Bb6YVh+kboCknkO9l8A7fsSqhziWuodeI7jOIsZbGaCtqGDvcI2eefL6Ac7oQD3cQ86sGNpmz7lSSjgE2iVV7ERtUNcQ+RtvLzCeyjDCSirBmqCAms1N/EWz5BnFauVPcEU3kDZxvAaexkQk2Alz0fwkvdT1NfwCNpGBwfj23hRFi1dK/iEWTq7mLyc1TXz3gsFVd8H6GBHo0Ilt3BtXRiClvURp1HCC9yFbqL2r+xlzOExCbphTFwI8E00HsQXfAOH57kPYYRPR+1HeNYn/YF3TBzO5UMmYm6tMEiydG6C7sNnfGWgvs5RfIcO7xzWkTQT6wvUFzswauJi1fCHWcKgQ/iFA9DNmydY0Q6Gxtqy/1cYLLpY9QF+MlGrS0f9Kcb8BmrxV4E/0j2YAAAAAElFTkSuQmCC" InformativeScreenshot="fc19e1a743d7d39aac5ce14bfaa3b39e.jpg" Selector="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" Title="신협 기업뱅킹" Url="[str_신협URL]" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean">
+            <ui:CheckTrue DisplayName="접속 상태 확인_Check True" ErrorMessage="신협 홈페이지에 재접속합니다." Expression="[is_로그인버튼 or Not is_로그아웃버튼]" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+          </ActivityFunc>
+        </ui:RetryScope.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RetryScope>
+    </Sequence>
+    <Sequence sap2010:Annotation.AnnotationText="1. 공인인증서 로그인" DisplayName="Sequence - 로그인 " sap:VirtualizedContainerService.HintSize="1191,1423" sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;공인인증서 로그인 시작&quot;]" />
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="신협 로그인 페이지_Use Browser Chrome" sap:VirtualizedContainerService.HintSize="484,919" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="7fe97bcb-1af5-41b7-818c-3eec6b991f32" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="450,702" sap2010:WorkflowViewState.IdRef="Sequence_47">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:RetryScope sap2010:Annotation.AnnotationText="재시도 횟수 : 3&#xA;인터벌  : 5초" DisplayName="공동인증서 클릭_Retry Scope" sap:VirtualizedContainerService.HintSize="388,466" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="3" RetryInterval="00:00:05">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="공동인증서 버튼 클릭_Click" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7fe97bcb-1af5-41b7-818c-3eec6b991f32" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/lgn/EI_LGN010101_01" CvType="Button" DesignTimeRectangle="1200, 510, 220, 160" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'공동인증서 로그인(구 공인인증서)'" FullSelectorArgument="&lt;webctrl aaname=' 공동인증서*' parentid='cert' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' 공동인증서*' parentid='cert' tag='BUTTON' type='' class='btn flex flex-col w-50 align-center login_btn02 btn-primary-3' check:text='공동인증서 로그인(구 공인인증서)' /&gt;" Guid="6914d6ee-5c2b-48f3-a753-7bbba7be21fe" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOAAAACkCAYAAACO5CKbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABBzSURBVHhe7Z3vaxVXGsf3T1hoX/iistVChP4wbMPWUosprRWtmiJVtLoxkKbVVbLiJquJxk2tRmuIWY3EptgVNror1d1gZZU2VETSdSWCrIG8CEpJCCW4oEREtPji2fPMzDP3zNwz987c3OTcm3y/8KG58/M6OZ95zjkz2l8QgiDWAgERxGKMAh798mt6tXwjPfPCu/TL598BAOQIO8QusVOmBAT8ceQnZ+PnXl5pPBgAIDfYKXaLHdMTEJA3MO0MAMgP7JgeX0Aukah8AEwu7JjeHfUFRPUDYGrQq6AvICZcAJga2DWJL6BpQwDA5CCBgABYQAIBAbCABAICYAEJBATAAhIICIAFJBAQAAtIICAAFpBAQAAsIIGAAFhAAgEBsIAEAgJgAQkEBMACEggIgAUkEBAAC0ggIAAWkEBAACwggYAAWEACAQGwgAQCAmABCQQEwAISCAiABSQQEAALSCAgABaQQEAALCCBgABYQAIBAbCABAICYAEJBATAAhIICIAFJBAQAAtIICAAFpBAQAAsIIGAAFhAAgEBsIAEAgJgAQkEBMACEggIgAUkELDAWLHuD/S3c99S33/+m1f4mHxs0znB1COBgAXEwT//1fldjD94aJRoIoyMjjnH5nOYzg2mFgkELBC21Lc6v4cvTv7TuD4ffH7EFfx3dYeM68HUIYGABcK/vvvBqVKmdfmEz3Gx99/GdWDqkEDAAkG6iqZ1+WSqzgMyI4GABQIEnFlIIGCBAAFnFhIIWCBAwJmFBAIWCBBwZiGBgAWCSYyGvZ3+8qQ0fnY8cCxhwyd/ilwHpg4JBCwQRBx9GYuiS5UESFbYSCBggSDimNaB6YcEAhYIkyEgv/vJb9bwQ34+Nv88/80Nxm3B1CKBgAVCvgU8/pd/OL9Xfq90YPCOc2wJ3ge1jwQCFggmAaMmYbKN7+Slbq54v5r/vr+cq5+8D8qC6vuAqUUCAQsEkUtfFjUJk0lAlozDopnWMywmB389yR4SCFggiFymdUkQuTKN9bgqcteUtzWtB5OPBAIWCPkSMO5xeFyIvxVhDwkELBDyJSDPeLJcpnU6+TofyA0JBCwQ8iUEdyu5e6lPvoSRcSK6oPaQQMACIV8C8sQKJ9Msp8yS4pmgPSQQsEDIl4CMTMSwaLpkXBXl+WCmWVIw+UggYIGQTwEZPpaEf+ZxIXdNOT9cv2XcB0wdEghYIOT734QR6bga8s98fP6Zz5FP0UFuSCBggSD/Klq+XhNjyUyiRS0HU4sEAhYQ8pqYVKmk6DOfsox/Zqn5tbbwcmAPCQQsMHgW8+//+M4XJS7cxdQnXHgZi8zdUIl85nX6OcHUI4GA0xSWjMPSsdTcxeWfORDQPhIIOE3hF7a5S6t3S/lnnojB35a3jwQCAmABCQQEwAISCAiABSQQEAALSCAgABaQQEAALCCBgABYQAIBAbCABAICYAEJBATAAhIICIAFJBAQAAtIICAAFpBAQAAsIIGAAFhAAgEBsIAEAk4JbdTWc5nO9Zynpt+a1k8utZ187st04kC9cX3xYPc65hPJtBCw5swgDQ2NxOPbk6H9T9IF03ZGBql7u76vR3k9VbaeVw3jErU176JF4fXPX6Ih5yo/pKv7tOWH+wznyEDad/dYuYtqtrcoTOd+h7q9fxZm/FpX2roU9dR0yhU1DpMic67XsQiRTAsBm665/+BsrNy5FNpffqlxEv7Fb6D6nhEaf+qtljwZo6tf7tK2i2g4Z0ecpbGT9t3DxxmhbsP6eAJ20dUH7nZxknasfTdp3FuXPXm+jkWIZMZ0QaURZhJw6Ky+PDsVZ0bosbcv3R9zqtTdR97nQCOJaDh+5XKpPXU7dTyVu30nA+trPtqU2lcnLwLGqYDXacj786Udq/k6DT/6mR5n4om7b/g6TPg6FiGSmSfgUL4EbKHe/7n7Pb55mkpleXkLXRh1l9PgWW/bbA1nA9V8dZPueg308X2p6A9pqKeLKspN+2jkRcA4pKpkTsfyq6R+HfJ5HYsHybQUML3BpX7J6Q0nJWCcpCSNFrfiovvP/9GDm9QU2FZvODyhcJ36h8Zo3K8MqhEO91F9+S46duOet0Tl6c90985tunpRjY1+nzqPjy/gPep1xqjBatYf+WfX6aDeUUPVCiGZsIDNsnyi17E4kcwQAU9T/33VgJ78TLe+Cm9/nm6FG5qMRVTDDyxX3Dol+6WqwfDF4IRE202voY72UYWzzNRw6uncsLPQzYMx6j/ToU08qKrY0UdD6nv7eTRI+/z1KfQxsPvnM4/nMkszwTFgHHwB9Uo90etYnEiKW0CeNdPHSB4XvIY9fvNs2jphzUrD8Tz8Bh016eGx74bXQJ7eo1tneLzWQW1XxvzxzPA30qDMDae06Sx1d3ZQ5YdZ/j99PFZsPU/dh/UJCaHNr+4c7sblVgFTIiQdC8fGKODEr2MxIiluARPNvAXDjezEQHqFc8hQAV1u0wk+f3kX9Y5pFUrLYzXWXON/1/SG449Jk8bvjnkcHgxM3NBT1bhDz8jijQH1SmS+aQXYUp8ar8Ulaqw6getYrEiKW8Dtl9QYyvC8LAYXDk9AgkAD2kT1Z27SrdGHSsyHaqw2SBc6WkKNM73hRMqfjdHrVC/HVQ336n3nwPR44HJqMkNV7lSjTS5grIRvBDFIH9Pp5HYdixXJNBsDbqCKLar7cibV/Tp35jTVJ7hbl37YHLzTR039JyJOw+Hvzuc8SSecB9H8s/nBukN5C527I1XjHvX+UX33r1KPMZzutzd7Gk/AFuq+EbpRSVV6+pCG9eXMjUtUYzxONP6Ybvhy8urpAAELlIgHuXpUIxrq0Sc5NFRjPnYlw/48C6kqTH3EuNEfM0ZWhQwNR537xI17qW6vIeNDoXM3qONp1Wq8T8TaEHwpYfQyVarl8QQ0IF3GHKqdiX3fuvLe+sb8PSZ0HYsMybQQsOIbr2tDLMp1t+o5Fcythr0DqoF7W9z9vi20fz11D6XGH+OjqoFc63Or55VBGrqjyXHf3DCyN5xNtMb5Ps2hZ3rauf1HDV7lvqi6Y/yIwnjulGh3r50M3VQ20T6ewHiiuskfucsmW0B51zQxp7q82U2X3K9j8SGZFgJKA3s8IA9s0/F/uRnehBnuiZiNPGB6fpUie8OJIuG5A3f9Nqpvju4el5anjpdNQP/7J477neT4iRO6Xrlfx+JDMi0ErL3iPbR+co/6e9zqx1P77nhOVcGewdRbJjfSX8bu9157ejw2SN2t6g7rjfuc/ZtP04UhaaCqqhjuvH7DeTRCvaY7vU6nXoGD5z7X2aG+L9/hPVovUf+oVMjbdCLHu342Aeu/VxXTNOGTlTHqVTck6VomJjSOzP06Fh+S6TEG5HHUQPa7uDOWMjTi0gPXaVh7G8WYp0ruwIvBKRJVkFAFnui545BzF3SKmch1LDYk02QSxqX0wzY15uujqwPaXXbgJl1QY8LabA+7eXzRep4uXLsduktfp251t8005qg4wH+FxnCXNmG8c7vndsd9qXP3X7mc9dxxkArVf6bFuL5QmPh1LB4k00pAAIoFCQQEwAISCAiABSQQEAALSCAgABaQQEAALCCBgEXJEppdWkFzXllmWGci6fY5MG85zSldTrPmGtaBNCQQMAOz3/yYln6wmRa+tkR9Xkbzl292PkeyfC3NMhzHYVEtbavbm5FVi0L7zFtFC1aq466spJJ5+rqPqe6LE3T88x30Yq7bx/g+2+pqqcw/hkcJi1ZBs0uCy1+sOULHvzhCG1/nbVbTwmzXY4YjgYBRzKumbUdUoz3aTOXOXX01bfxcfeaGHEVYCJ33mqi9vdPMUXf/uvdT28+vbKX2Tu3YnZ1Ut3aVtz5dqKTbB79Pl7Zfl7a8icple+H9/c52+ndlAgKqm9XinXzMTtq6NLgdcJFAwAjKNh9zGtqhzeuN64N4cmYSMAOz1h4MNurXd1ALy3CgUVVf1XV8rYqqD7Ach2lNGW8TEirp9iFK1PnbeT0L3KkkWsQVP307h1gCKhY10qEM55zpSCCgkSra6lQlrUFlZC1tbE3Q2Lzqs+k997PbeLv8ajGn8nB6I1+lN/ygUEm35/UlS1QXsaqRGqSq76+jskXbqYmrvvp8aO9e2rhOdb9/ox1TITeLlprV6rM3tlQs3MI3LP16rafqNj5WJ1W/FTwGgICZeavRrQjtjeljICNeA/9sO80xrg8RqiJl69V4a+cOKpdxm7e+ad1yf58yp4GLpCGhkm6vKKlype3Yf5CqP1hNz3rLefy2uGY/fercgI5RdWhcWral091vW5X67B3XJ3jDWrjN7dq2b4nTi5hZSCCgAakox3d+7C6bu8y/0xt5u9HtAu6uVZ/TZwIdwfTJjb1e91ZVmcByZr1qrHOleqhKs2cv1XnbHz9Q5wkUEirp9r+uNE8iGanUbiqp87hj40wVMFUtj+/ZismYEBIIaMDtEipBPlnrLpMxVizSu63ltTKpEYPaane/lyppzc7D1H60izqOHKOm2s30oj/zmF7REm3vVcx47KfF3jlme0I17NxPHeq/LTXe9VGkjQEZOY/+PYGDBAIaEAHdcY5aZqqA67zGuC60PNuzsHnLaf5SrcIsXUuzA48MNCKfrRkEZJJu7zHrlQr/Oy18s8L4fWYvVlWeJ2naVLd87mpaz5M8anzXsM7tvkLAZEggoAER8HidV41MeI0rMPGRibmraMVOr2uo6DjCFS81/d+iKt/s0D7GRu1QTZu4WjZvpxJtedLtZy/eQU3t7vnDdHzWSAtecrd7dkmTO6PJM6RvePu/pKTmCRtv1jSjgKorrJ8XQMDMeDOIGSdVEgrozx5uXp+a8GBUdS3b7AofPla0UGaSbe/N9B49SKveXJ76Tur7lHyw35mEcida3OVllY201HkhQfZXlKynhYvdiR/Tud1l6hyZbmQzFAkENFG6nT7lhtOpxj9R3cmkFdDb/tDOzTRfdROdBu90bdfSqt08s5h6DCG4DbiT6qq0LmuAapqvdReTbe9NqCgB17+92um6Put8n9W0oMp9LqgLmI10AZfRij3q+Oo4DWsn8RW4IkUCAY2oxrPbbTyRgiUV8PnltKDmIB3S31YRjh2jhqpQZVT4FSSSiIoTSag6vrGV6iLe7jm0ezuVhV43y0SagPO2UoPzYP8grYga485gJBAwiqXN7rPAPVvTxmYOEe9ExoEnPfxJm8l8QTouzuRNzEmkKEITQPKc8RCeARqRQMBIllH5tmPU3n6EqpdkeDULpFNSRZsOdFJ7axMtzEXmGYAEAgJgAQkEBMACEggIgAUkEBAAC0ggIAAWkEBAACwggYAAWEACAQGwgAQCAmABCQQEwAISCAiABSQQEAALSCAgABaQQEAALCCBgABYQAIBAbCABAICYAEJBATAAhIICIAFJBAQAAtIICAAFpBAQAAsIIGAAFhAAgEBsIAEAgJgAQkEBMACEggIgAUkvoDPvPCucUMAQH5h1yS+gK+WbzRuDADIL+yaxBfw6Jdf03MvrzTuAADID+wYuybxBeSgCgIwuejVjxMQ8MeRn5wNUAkByC/sFLvFjukJCCjhEskbY2IGgInBDrFLerdTj1FABEGmJhAQQayF6P+Wg0g36V6FiwAAAABJRU5ErkJggg==" InformativeScreenshot="d74a1d6de04fc0cbaccffa7f053a0b31.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean">
+                    <ui:UiElementExists Exists="{x:Null}" DisplayName="전자서명작성 창_Element Exists" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="98c3b32b-b961-4a57-acff-e477a6b43605" InformativeScreenshot="fd146cd6b8ca94959c946e316786418d" Selector="&lt;wnd app='delfino.exe' cls='QWidget' title='전자 서명 작성' /&gt;&lt;uia automationid='TitleBar' role='제목 표시줄' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                  </ActivityFunc>
+                </ui:RetryScope.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RetryScope>
+              <ui:RepeatNumberOfTimesX DisplayName="공인인증서 로그인 시도_Repeat Number Of Times" sap:VirtualizedContainerService.HintSize="388,81" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_3" NumberOfTimes="3" StartAt="1">
+                <ui:RepeatNumberOfTimesX.Body>
+                  <ActivityAction x:TypeArguments="x:Int32">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1062,1069" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="is_공인인증서로그인" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NCheckState DisplayName="로그인 확인_Check App State" Exists="[is_공인인증서로그인]" sap:VirtualizedContainerService.HintSize="1000,956" sap2010:WorkflowViewState.IdRef="NCheckState_11" ScopeIdentifier="7fe97bcb-1af5-41b7-818c-3eec6b991f32" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="450,321" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;is_공인인증서로그인 : &quot; + is_공인인증서로그인.ToString]" />
+                            <ui:Break sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Break_2" />
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="496,739" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="sstr_신협공인인증서비밀번호" DisplayName="인증서 암호 입력_Type Secure Text " sap:VirtualizedContainerService.HintSize="434,138" sap2010:WorkflowViewState.IdRef="TypeSecureText_3" SecureText="[sstr_신협공인인증서비밀번호]">
+                              <ui:TypeSecureText.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0a521951-dac4-42a6-85c9-9404464ccd47" InformativeScreenshot="770edd45614abf8fb952dd7eae4eeb60" Selector="&lt;wnd app='delfino.exe' cls='QWidget' title='전자 서명 작성' /&gt;&lt;wnd aaname='인증서 암호는*' cls='Edit' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:TypeSecureText.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:TypeSecureText>
+                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="전자서명작성_Use Application" sap:VirtualizedContainerService.HintSize="434,448" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" ScopeGuid="080259fd-ff59-4613-8d7c-ec2a5db7d4a5" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="확인_Click" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="080259fd-ff59-4613-8d7c-ec2a5db7d4a5" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable CvElementArea="142, 541, 89, 33" CvTextArea="171, 548, 30, 16" CvTextArgument="40!" CvType="Button" DesignTimeRectangle="144, 542, 87, 31" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'확인'" FullSelectorArgument="&lt;wnd aaname='확인' cls='QWidget' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='확인' cls='QWidget' check:text='확인' /&gt;" Guid="fbdd8ecf-4748-48c9-9b09-65a7caf5fe9f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAjCAYAAAD7R3Y1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVGhD7ZrBSsNQEEXdiSulSnHj1t9SQS10paAL9Uv8gII/IKZ+QSkuCtL+TBYjTxgZmslLqullIvfCgTB3XhYnb5mdsiyFYKBsID+yz58XsnfxJrtnr6QjDq4KuZssq7L3LwsZ3s7l5OGTdMTRzUwG19Oq7PQlvAPkbySvlA2CsoFQNhDKBkLZQMLJ9uL1dtYWjdch6N3N1uQ6G6+3MyRhZLeJ3as7n5tp7A6ScDdbs/7s9U1zTW4HSSjZmtxsPXV73kxjd5CEvdk2Xm9ndXNNbgdJONmKpu3cdjZeb2dIwsjeNN47mtB4HYKwN3sbaLwOQTjZbZM763UJjdch6N3N1mzaRYCygfxL2U3xziLonew+Q9lAKBsIZQOhbCCUDYSygVA2EFf24Wgqp08f7gHyO9K/fslrRfb9ZCnH4/fvL0G6YTAq5PFlVZVNtg9lwyjlC6ySbv1+OMuqAAAAAElFTkSuQmCC" InformativeScreenshot="fd872f422a3fba44580871800c8cb339.png" ScopeSelectorArgument="&lt;wnd app='delfino.exe' cls='QWidget' title='전자 서명 작성' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="1298, 300, 466, 591" FilePath="C:\Program Files (x86)\Wizvera\Delfino-G3\delfino.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIcSURBVFhHtVcLscIwEKwEJCABCU8CEioBB+UjAAlIQAISkFAJlcDbzWxLern+UrozO6HJ5e66uaShaHG5XE7gE3yBj+v1WlZVtdPw9mBA8GPYgEeOI5m9knyhr45sOlu+ANr8xBnAOA2U46R/hEzmnJWI3tBzmsMaSRzkeh4wyVuKtSzlfhowPprJP+HtdvtTiHHA+G0nz2TN5dMSsnjteDNZEywcZ6JL2LYVP7jGHIMdCzu8FH4/NJSC2cHIy7xHBobtnqRzPoNx4XIHJGcJlwDPb84LAS0wYertw5lARybgFJnQQ0nvBmuBhmZizEZvcDf9S8hETgrXBwZHK58T0eYWZ49UQ2G/YKdnLDLwWPAgMdrSk1fKlbIJKidJoHM0gNMXs5GbWYA9Dzp+S76HkxzlspabRYAKZ/2cnwClQyUfTN9TbvJgHQ4xzhjP8ed4/jnvgXszcubSFg2ewznAVl3rYAMavmXWgbJTESavrnVAEO+G0zLciDYFJXYCk4u2WDYQyL2EUGqZbA8ETA4crrOGtweD2QTA7de/hbZjTwVVuv/93gII2LuWswbUd5/achhfdvsdAgL2dgQVQEtl2rt+okibuB7XA866ryODorX3BfcCqunrQbnhvFOC8qKd+r+QnJirIWmD/FESyXaNyDHWy+8KV2pwGSg7a4BX7aGTsyNt5eJ3UPATkyIRiIrc0RfqQWSyM/8hF8U/X6OsTJacrHwAAAAASUVORK5CYII=" InformativeScreenshot="80f85d34b42b11642f23988c165452dc.png" Selector="&lt;wnd app='delfino.exe' cls='QWidget' title='전자 서명 작성' /&gt;" Title="전자 서명 작성" />
+                              </uix:NApplicationCard.TargetApp>
+                            </uix:NApplicationCard>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/myp/EI_MYP090101_01" CvTextArgument="MY" CvType="Text" DesignTimeRectangle="610, 333, 1060, 48" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'MY 홈'" FullSelectorArgument="&lt;webctrl parentid='sub' aaname='MY 홈' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='sub' aaname='MY 홈' tag='H2' type='' class='page-name' check:text='MY 홈' /&gt;" Guid="3ae3cfe4-a177-4cb6-bd75-ef29129d0f49" ImageBase64="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" InformativeScreenshot="d916af77c40685f6b81e11c3b801b82c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='MY홈 | 마이페이지 | 신협 기업뱅킹' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RepeatNumberOfTimesX.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RepeatNumberOfTimesX>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVDhPfdM7aBRBHMfxyUUv3s5iQrRKYxNsrIUYUBJSCcYkl9sxHETwUaiIhY8mFoKIloqIoEeUoDdzmhiiIOeDFBoR1IjiAxvBF6YRG20EA/r9XVY9Ujjwudmdx/8/MztnFpecK5vYVYxN/LBNwnnrwmV0IR2xqNikLA3WVbJ2aNxESVjK4EHMYhLTuEOwDcuSkKFusAWfbR4YMy39F/8GaGTQlsj5tsiF3Tw/wG2Mp/V1PEQf/e0EyZt9M2ZFb0kBvLTSqaXuwjQDOqzz23lWgCp60Idb2INSlJSzEXMNA6WTRmW5gMNsR231AbrN00BbOJO6QdJVSq5G2Qpf63Bh/UKAsB8T0Bb6YVh+kboCknkO9l8A7fsSqhziWuodeI7jOIsZbGaCtqGDvcI2eefL6Ac7oQD3cQ86sGNpmz7lSSjgE2iVV7ERtUNcQ+RtvLzCeyjDCSirBmqCAms1N/EWz5BnFauVPcEU3kDZxvAaexkQk2Alz0fwkvdT1NfwCNpGBwfj23hRFi1dK/iEWTq7mLyc1TXz3gsFVd8H6GBHo0Ilt3BtXRiClvURp1HCC9yFbqL2r+xlzOExCbphTFwI8E00HsQXfAOH57kPYYRPR+1HeNYn/YF3TBzO5UMmYm6tMEiydG6C7sNnfGWgvs5RfIcO7xzWkTQT6wvUFzswauJi1fCHWcKgQ/iFA9DNmydY0Q6Gxtqy/1cYLLpY9QF+MlGrS0f9Kcb8BmrxV4E/0j2YAAAAAElFTkSuQmCC" InformativeScreenshot="62f152220f8923da21e1401491f3dda9.jpg" Selector="&lt;html app='chrome.exe' htmlwindowname='p' title='로그인 | 신협 기업뱅킹' /&gt;" Title="로그인 | 신협 기업뱅킹" Url="https://bizbank.cu.co.kr/lgn/EI_LGN010101_01" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;공인인증서 로그인 성공&quot;]" />
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1191,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;관리하는 사람들_신협접속 완료&quot;]" />
+  </Sequence>
+</Activity>

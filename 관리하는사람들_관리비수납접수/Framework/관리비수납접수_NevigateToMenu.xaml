@@ -1,0 +1,241 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="관리비수납접수_NevigateMenu" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1110,2628" sap2010:WorkflowViewState.IdRef="관리비수납접수_NevigateMenu_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="관리비수납접수_NevigateMenu" sap:VirtualizedContainerService.HintSize="546,2563" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;관리하는사람들_메뉴이동 시작&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="신협 메뉴이동_Use Browser Chrome" sap:VirtualizedContainerService.HintSize="484,2090" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="36eb2850-3452-407b-89c5-f0fda5e079f5" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="450,1873" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RetryScope sap2010:Annotation.AnnotationText="-조회버튼 클릭&#xA;&#xA;- 재시도 횟수 : 3회 &#xA;- 간격 : 5초" DisplayName="조회 메뉴 클릭_Retry Scope" sap:VirtualizedContainerService.HintSize="388,576" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="1" DisplayName="조회 메뉴 클릭_Click" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="36eb2850-3452-407b-89c5-f0fda5e079f5" Timeout="10" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/inq/EI_INQ010101_01?id=tab1" CvTextArgument="X2" CvType="Text" DesignTimeRectangle="475, 129, 91, 97" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'조회'" FullSelectorArgument="&lt;webctrl aaname='*조회*' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='*조회*' tag='A' type='' class='' check:text='조회' /&gt;" Guid="7e87c62f-dec8-498d-b95b-4a270b8daa4b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF8AAABlCAYAAAArrT8+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMTSURBVHhe7dgxa9tAAMXxfAp/hS4aDRkKHpopHg0d7M00QyBDOxVtoUO9BWUIplAyBXVTJncI7qYMARkC6VDwYHDAg4aAhhAMHV5P0tmVVSdRphfS94cbfLKW38knyRtQtIRPTPjEhE9M+MSET0z4xIRPTPjEhE9M+MSET0z4xIRPTPjEhE9M+MSET0z4xIRPTPjEhE9M+MSET0z4xIRPTPjEhE9M+MSET0z4xIRPTPjEhE9M+MSET0z4xIRPTPjEhE9M+MSET+zl4f+eI0kSJLf2c7GbMcLzEOE4sRPcXh7+yEOtVkPtILIThR46RuiZ4EfwUpTKo4tgZk9NIvhHffQX42Mn/07b/Ttnhj8yV7vw1zXFsACVDxedDHoLu5/Lx3xEi51jFqC7XJT7R/c0Fn7lkiHcDG4L/Z92rkq3Zr9P9/xkbicKCb9a0xO7fZjhfAqxhnK16wH22/XlOdl5jV0cXxZursJ/vOTCQzNFapu9+qBpwBzsnozvX4C5uWe8Md93OvC+X2GaxBif+3C300XowJ/Y7wn/geYxwqMu6inQ5gcMrtPJKYI9J0Or7/QRztYswaUHxxxvnUzthO2il52X7fdpwl/TrwF65inltZNeqTlydGOPZSWIFotihtPowD0t/BImfnZzdvYCs1SL5rj6km9d7pndeoS/pmzbqKP53kMwsldpCv6t9GRjXpKGX110tzulm/Ac0WEru/prm0203rbQauS/lpUFEX7VYgQ76ZVeeKZ/pGQ8hL98zt/PFnJlkxJ+1Z6On1UGtn83xDdmGYRftWr48dl+vs0sht1u/hl7A8TCL1XxDXXd8Ebm/MvjVfwdF73lm/Axgh8hwtEYcfrSJfxS5f9mnjCGi+f3qgmfmPCJTYb5r+as9DJG6v/Cf2YJn5jwiQmfmPCJCZ+Y8IkJn5jwiQmfmPCJCZ+Y8IkJn5jwiQmfmPCJCZ+Y8IkJn5jwiQmfmPCJCZ+Y8IkJn5jwiQmfmPCJCZ+Y8IkJn5jwiQmfmPCJCZ+Y8IkJn5jwiQmfmPCJbbx6dwcNxrjDH1iYKdH9sB72AAAAAElFTkSuQmCC" InformativeScreenshot="c052f98fd8289fa1623e428cb2d38b67.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector, Image, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArgument="0|*|" CvType="Text" DesignTimeRectangle="595, 167, 33, 19" ElementType="Text" FriendlyName="'0*'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="전체계좌조회_Element Exists" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ea02f8c-b35e-4c2c-8dec-82a772f46ef4" InformativeScreenshot="8288004c229f8bc5db3e838989b77e03" Selector="&lt;webctrl parentid='sub' tag='H2' aaname='전체계좌조회' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+            <ui:RetryScope sap2010:Annotation.AnnotationText="- 가상계좌조회 버튼 클릭&#xA;&#xA;- 재시도 횟수 : 3회&#xA;- 간격 : 5초" DisplayName="가상계좌조회 버튼 클릭_Retry Scope" sap:VirtualizedContainerService.HintSize="388,526" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:05">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5f977ec-23e2-40bc-ae36-54523820549c" InformativeScreenshot="91de65482e3d89176516d986fac518d2" Selector="&lt;webctrl aaname='가상계좌조회' parentid='main' tag='SPAN' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="모계좌번호_Element Exists " sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bcd8f7ba-c992-49db-b93d-76c9119f0e63" InformativeScreenshot="c73be081623a30f67f1d14d3d9a5fda6" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='모계좌번호' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+            <ui:RetryScope sap2010:Annotation.AnnotationText="- 모계좌번로 클릭&#xA;&#xA;- 재시도 횟수 : 3회&#xA;- 간격 : 5초" DisplayName="모계좌번호 클릭_Retry Scope" sap:VirtualizedContainerService.HintSize="388,576" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:05">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="1" DisplayName="모계좌번호 클릭_Click " sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="36eb2850-3452-407b-89c5-f0fda5e079f5" Timeout="10" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bizbank.cu.co.kr/inq/EI_INQ030101_01" CvTextArgument="134-004-695222" CvType="Text" DesignTimeRectangle="660, 642, 110, 16" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'134-004-695222'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='BUTTON' aaname='*-*-*' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='BUTTON' aaname='*-*-*' type='' class='btn-show-account' check:text='134-004-695222' /&gt;" Guid="f9177410-2f20-43c6-82d1-4bfa1a390024" ImageBase64="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" InformativeScreenshot="40c5c2756620946307d7441a0b041438.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="조회버튼_Element Exists " sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b79b8fa2-8a50-4337-a626-8300f3dabebc" InformativeScreenshot="7ba07fe54c96218d50d258a82b8b1eec" Selector="&lt;webctrl aaname=' 조회 ' parentid='sub' tag='BUTTON' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVDhPfdM7aBRBHMfxyUUv3s5iQrRKYxNsrIUYUBJSCcYkl9sxHETwUaiIhY8mFoKIloqIoEeUoDdzmhiiIOeDFBoR1IjiAxvBF6YRG20EA/r9XVY9Ujjwudmdx/8/MztnFpecK5vYVYxN/LBNwnnrwmV0IR2xqNikLA3WVbJ2aNxESVjK4EHMYhLTuEOwDcuSkKFusAWfbR4YMy39F/8GaGTQlsj5tsiF3Tw/wG2Mp/V1PEQf/e0EyZt9M2ZFb0kBvLTSqaXuwjQDOqzz23lWgCp60Idb2INSlJSzEXMNA6WTRmW5gMNsR231AbrN00BbOJO6QdJVSq5G2Qpf63Bh/UKAsB8T0Bb6YVh+kboCknkO9l8A7fsSqhziWuodeI7jOIsZbGaCtqGDvcI2eefL6Ac7oQD3cQ86sGNpmz7lSSjgE2iVV7ERtUNcQ+RtvLzCeyjDCSirBmqCAms1N/EWz5BnFauVPcEU3kDZxvAaexkQk2Alz0fwkvdT1NfwCNpGBwfj23hRFi1dK/iEWTq7mLyc1TXz3gsFVd8H6GBHo0Ilt3BtXRiClvURp1HCC9yFbqL2r+xlzOExCbphTFwI8E00HsQXfAOH57kPYYRPR+1HeNYn/YF3TBzO5UMmYm6tMEiydG6C7sNnfGWgvs5RfIcO7xzWkTQT6wvUFzswauJi1fCHWcKgQ/iFA9DNmydY0Q6Gxtqy/1cYLLpY9QF+MlGrS0f9Kcb8BmrxV4E/0j2YAAAAAElFTkSuQmCC" InformativeScreenshot="4efa80cde61e81ee08b2b49565639ade.jpg" Selector="&lt;html app='chrome.exe' htmlwindowname='p' title='*기업뱅킹' /&gt;" Title="MY홈 | 마이페이지 | 신협 기업뱅킹" Url="https://bizbank.cu.co.kr/myp/EI_MYP090101_01" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;관리하는사람들_메뉴이동 종료&quot;]" />
+  </Sequence>
+</Activity>
